@@ -338,6 +338,10 @@ ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
 PRODUCT_PACKAGES += TelephonyMonitor
 endif
 
+# Thermal packages
+PRODUCT_PACKAGES += \
+    thermal.msm8996
+
 # Wifi
 PRODUCT_PACKAGES += \
     libwpa_client \
