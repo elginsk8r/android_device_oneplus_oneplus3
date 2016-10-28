@@ -19,15 +19,11 @@ LOCAL_STATIC_ANDROID_LIBRARIES := \
     android-support-v7-appcompat \
     android-support-v14-preference
 
-LOCAL_STATIC_JAVA_LIBRARIES := \
-    org.lineageos.platform.internal
-
 LOCAL_RESOURCE_DIR := \
-    $(LOCAL_PATH)/res \
-    $(TOP)/packages/resources/devicesettings/res
+    $(LOCAL_PATH)/res
 
 LOCAL_PROGUARD_FLAG_FILES := proguard.flags
 
-include $(BUILD_PACKAGE)
+#include $(BUILD_PACKAGE)
 
-include $(call all-makefiles-under,$(LOCAL_PATH))
+#include $(call all-makefiles-under,$(LOCAL_PATH))
