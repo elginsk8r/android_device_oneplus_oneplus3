@@ -21,11 +21,6 @@
 # definition file).
 #
 
-# Device was launched with M
-$(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_m.mk)
-
-$(call inherit-product, vendor/oneplus/oneplus3/oneplus3-vendor.mk)
-
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
