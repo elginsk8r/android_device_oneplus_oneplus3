@@ -193,7 +193,6 @@ BOARD_ROOT_EXTRA_SYMLINKS := \
     /vendor/dsp:/dsp \
     /vendor/firmware_mnt:/firmware
 BOARD_FLASH_BLOCK_SIZE := 262144
-TARGET_USES_MKE2FS := true
 
 # Power
 TARGET_HAS_NO_WLAN_STATS := true
