@@ -92,7 +92,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     sys.vendor.shutdown.waittime=500 \
     ro.build.shutdown_timeout=0 \
     ro.frp.pst=/dev/block/bootdevice/by-name/config \
-    persist.radio.multisim.config=dsds
+    persist.radio.multisim.config=dsds \
+    debug.hwui.use_buffer_age=false
 
 # Haters gonna hate..
 PRODUCT_CHARACTERISTICS := nosdcard
