@@ -29,6 +29,9 @@ endif
 
 PRODUCT_SHIPPING_API_LEVEL := 23
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_KERNEL):kernel
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
