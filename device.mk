@@ -192,10 +192,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.disable_hwc_vds=1
 
-# Doze mode
-PRODUCT_PACKAGES += \
-    OneplusDoze
-
 # Fingerprint sensor
 PRODUCT_PACKAGES += \
     fingerprintd
