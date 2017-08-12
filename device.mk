@@ -257,7 +257,7 @@ PRODUCT_COPY_FILES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    lights.msm8996
+    lights.oneplus3
 
 # LLVM
 $(call inherit-product-if-exists, external/llvm/llvm-select.mk)
