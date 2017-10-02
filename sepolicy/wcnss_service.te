@@ -1,12 +1,4 @@
-allow wcnss_service self:capability {
-    setgid
-    setuid
-    dac_override
-    net_raw
-};
-allow wcnss_service shell_exec:file { execute execute_no_trans r_file_perms };
-allow wcnss_service toolbox_exec:file getattr;
 get_prop(wcnss_service, diag_prop);
-
-allow wcnss_service sdcardfs:dir { write search };
-allow wcnss_service media_rw_data_file:dir search;
+allow wcnss_service toolbox_exec:file { execute getattr execute_no_trans read open };
+allow wcnss_service shell_exec:file { execute getattr execute_no_trans read open };
+allowxperm wcnss_service self:udp_socket ioctl priv_sock_ioctls;

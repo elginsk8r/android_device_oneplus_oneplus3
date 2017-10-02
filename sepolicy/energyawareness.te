@@ -1,2 +1,2 @@
-allow energyawareness debugfs_msm_core:file rw_file_perms;
-allow energyawareness debugfs_msm_core:dir r_dir_perms;
+allow energyawareness sysfs_uio:file r_file_perms;
+allow energyawareness sysfs_rmt_storage:file r_file_perms;

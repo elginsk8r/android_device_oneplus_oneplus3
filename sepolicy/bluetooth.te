@@ -1,1 +1,1 @@
-r_dir_file(bluetooth, storage_stub_file);
+allow bluetooth wcnss_filter:unix_stream_socket connectto;
