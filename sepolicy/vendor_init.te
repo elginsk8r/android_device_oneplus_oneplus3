@@ -1,3 +1,7 @@
+# TODO(b/36601695): Remove data_between_core_and_vendor violators once
+# tee no longer directly accesses system_data_file.
+typeattribute vendor_init data_between_core_and_vendor_violators;
+
 allow vendor_init {
   camera_data_file
   fingerprintd_data_file

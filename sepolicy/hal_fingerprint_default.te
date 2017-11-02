@@ -1,3 +1,7 @@
+# TODO(b/36601695): Remove data_between_core_and_vendor violators once
+# hal_fingerprint no longer directly accesses fingerprintd_data_file.
+typeattribute hal_fingerprint_default data_between_core_and_vendor_violators;
+
 allow hal_fingerprint_default firmware_file:dir search;
 allow hal_fingerprint_default firmware_file:file r_file_perms;
 

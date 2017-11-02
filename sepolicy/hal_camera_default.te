@@ -1,2 +1,6 @@
+# TODO(b/36601695): Remove data_between_core_and_vendor violators once
+# hal_camera no longer directly accesses camera_data_file.
+typeattribute hal_camera_default data_between_core_and_vendor_violators;
+
 allow hal_camera_default camera_data_file:dir search;
 allow hal_camera_default camera_data_file:sock_file write;
