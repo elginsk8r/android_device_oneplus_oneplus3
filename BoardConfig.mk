@@ -191,8 +191,8 @@ TARGET_USERIMAGES_USE_F2FS := true
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
-
-#BOARD_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy
+BOARD_SEPOLICY_DIRS += \
+    $(PLATFORM_PATH)/sepolicy
 
 # Treble
 #PRODUCT_FULL_TREBLE_OVERRIDE := true
