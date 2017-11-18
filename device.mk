@@ -102,8 +102,7 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_PACKAGES += \
     AntHalService \
     libantradio \
-    antradio_app \
-    libvolumelistener
+    antradio_app
 
 # Audio
 PRODUCT_PACKAGES += \
