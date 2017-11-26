@@ -463,9 +463,9 @@ service vendor.imsrcsservice /system/vendor/bin/imsrcsd
    disabled
    writepid /dev/cpuset/system-background/tasks
 
-#on property:vendor.ims.DATA_DAEMON_STATUS=1
-#   start ims_rtp_daemon
-#   start vendor.imsrcsservice
+on property:vendor.ims.DATA_DAEMON_STATUS=1
+   start ims_rtp_daemon
+   start vendor.imsrcsservice
 
 service dts_configurator /system/vendor/bin/dts_configurator
     class late_start
