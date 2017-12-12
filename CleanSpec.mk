@@ -51,3 +51,7 @@ $(call add-clean-step, rm -rf $(PRODUCT_OUT)/vendor/bin/hw/android.hardware.drm@
 # Remove Widevine HAL 1.0
 $(call add-clean-step, rm -rf $(PRODUCT_OUT)/vendor/etc/init/android.hardware.drm@1.0-service.widevine.rc)
 $(call add-clean-step, rm -rf $(PRODUCT_OUT)/vendor/bin/hw/android.hardware.drm@1.0-service.widevine)
+
+# Remove /system/lib[64]/vndk-sp/android.hardware.graphics.allocator@2.0.so
+$(call add-clean-step, rm -rf $(PRODUCT_OUT)/system/lib/vndk-sp/android.hardware.graphics.allocator@2.0.so)
+$(call add-clean-step, rm -rf $(PRODUCT_OUT)/system/lib64/vndk-sp/android.hardware.graphics.allocator@2.0.so)
