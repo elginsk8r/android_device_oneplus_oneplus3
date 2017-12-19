@@ -1,4 +1,4 @@
-# Copyright (C) 2016 The CyanogenMod Project
+# Copyright (C) 2010 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,23 +12,21 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+#
+# This file is the build configuration for a full Android
+# build for grouper hardware. This cleanly combines a set of
+# device-specific aspects (drivers) with a device-agnostic
+# product configuration (apps).
+#
+
 # Inherit from oneplus3 device
 $(call inherit-product, device/oneplus/oneplus3/aosp_oneplus3.mk)
 
 # Inherit some common evervolv stuff.
-$(call inherit-product, $(SRC_EVERVOLV_DIR)/config/common_full_phone.mk)
+$(call inherit-product, vendor/du/config/common_full_phone.mk)
 
-# Inherit evervolv overlays.
-DEVICE_PACKAGE_OVERLAYS += device/oneplus/oneplus3/overlay_ev
-
-# Bootanimation
-BOOT_ANIMATION_SIZE := 1080p
-
-PRODUCT_NAME := ev_oneplus3
+# Discard inherited values and use our own instead.
+PRODUCT_NAME := du_oneplus3
 PRODUCT_DEVICE := oneplus3
 PRODUCT_BRAND := OnePlus
 PRODUCT_MANUFACTURER := OnePlus
-PRODUCT_GMS_CLIENTID_BASE := android-oneplus
-
-PRODUCT_CODENAME := Plures
-PRODUCT_MOTD :="\n\n\n--------------------MESSAGE---------------------\nThank you for choosing Evervolv for your OnePlus 3\nPlease visit us at \#evervolv on irc.freenode.net\nFollow @preludedrew for the latest Evervolv updates\nGet the latest rom at evervolv.com\n------------------------------------------------\n"
