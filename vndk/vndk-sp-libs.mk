@@ -18,10 +18,8 @@ VNDK_SP_LIBRARIES := \
     libRSCpuRef \
     libbcinfo \
     libblas \
-    libft2 \
     libhidlmemory \
     libion \
-    libpng \
     libcompiler_rt \
     libbacktrace \
     libunwind \
