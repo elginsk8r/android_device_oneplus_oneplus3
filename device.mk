@@ -199,7 +199,9 @@ PRODUCT_PACKAGES += \
     gralloc.msm8996 \
     hwcomposer.msm8996 \
     memtrack.msm8996 \
+    libdisplayconfig \
     liboverlay \
+    libqdMetaData.system \
     libtinyxml \
     android.hardware.graphics.allocator@2.0-impl \
     android.hardware.graphics.allocator@2.0-service \
