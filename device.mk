@@ -409,7 +409,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.snapshot_timer=0 \
     persist.vendor.radio.custom_ecc=1 \
     persist.vendor.radio.rat_on=combine \
-    persist.vendor.radio.sib16_support=1
+    persist.vendor.radio.sib16_support=1 \
+    persist.radio.aosp_usr_pref_sel=true
 
 # Sensors
 PRODUCT_PACKAGES += \
