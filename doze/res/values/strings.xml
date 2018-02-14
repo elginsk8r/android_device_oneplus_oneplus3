@@ -34,4 +34,5 @@
     <string name="dlg_ok">OK</string>
     <string name="doze_settings_help_title">Help</string>
     <string name="doze_settings_help_text">These features use sensor events to launch a doze notification pulse, this will cause higher battery usage.</string>
+
 </resources>
