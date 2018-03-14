@@ -1,5 +1,6 @@
+ALLOW_MISSING_DEPENDENCIES=true
 TARGET_USES_AOSP := true
-TARGET_USES_AOSP_FOR_AUDIO := false
+TARGET_USES_AOSP_FOR_AUDIO := true
 TARGET_USES_QCOM_BSP := false
 
 ifeq ($(TARGET_USES_AOSP),true)
@@ -56,6 +57,8 @@ PRODUCT_COPY_FILES += \
     device/qcom/msm8996/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
     device/qcom/msm8996/media_codecs_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance.xml \
     device/qcom/msm8996/media_codecs_vendor_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_vendor_audio.xml
+PRODUCT_PROPERTY_OVERRIDES  += \
+    media.settings.xml=/vendor/etc/media_profiles_vendor.xml
 endif  #TARGET_ENABLE_QC_AV_ENHANCEMENTS
 
 PRODUCT_COPY_FILES += device/qcom/msm8996/whitelistedapps.xml:system/etc/whitelistedapps.xml \
@@ -227,9 +230,8 @@ PRODUCT_COPY_FILES += \
 device/qcom/msm8996/powerhint.xml:system/etc/powerhint.xml
 
 #Healthd packages
-PRODUCT_PACKAGES += android.hardware.health@1.0-impl \
-                   android.hardware.health@1.0-convert \
-                   android.hardware.health@1.0-service \
+PRODUCT_PACKAGES += android.hardware.health@2.0-impl \
+                   android.hardware.health@2.0-service \
                    libhealthd.msm
 
 PRODUCT_FULL_TREBLE_OVERRIDE := true
@@ -324,3 +326,4 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES += android.hardware.thermal@1.0-impl \
                     android.hardware.thermal@1.0-service
 
+SDM660_DISABLE_MODULE := true

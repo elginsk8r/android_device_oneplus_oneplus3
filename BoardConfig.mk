@@ -37,7 +37,7 @@ QTI_S3D := true # Enable S3D GPU compostion
 BOARD_USES_GENERIC_AUDIO := true
 USE_CAMERA_STUB := true
 
-USE_CLANG_PLATFORM_BUILD := true
+#USE_CLANG_PLATFORM_BUILD := true
 
 -include $(QCPATH)/common/msm8996/BoardConfigVendor.mk
 
@@ -67,7 +67,7 @@ else
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x04000000
 BOARD_CACHEIMAGE_PARTITION_SIZE := 268435456
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
-TARGET_RECOVERY_UPDATER_LIBS += librecovery_updater_msm
+#TARGET_RECOVERY_UPDATER_LIBS += librecovery_updater_msm
 endif
 
 ifeq ($(ENABLE_AB), true)
