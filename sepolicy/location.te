@@ -1,1 +1,1 @@
-allow location location_data_file:sock_file unlink;
+get_prop(location, diag_prop);

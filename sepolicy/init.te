@@ -1,17 +1,4 @@
-allow init perfd_data_file:sock_file write;
-allow init self:rawip_socket { create setopt getopt };
-allow init self:netlink_kobject_uevent_socket { create bind setopt read };
-allow init surfaceflinger:process signull;
-allow init perfd_data_file:file { read append };
-allow init self:netlink_route_socket { read };
-allow init diag_device:chr_file { read open write };
-get_prop(init, vendor_rild_libpath_prop);
-domain_trans(init, rootfs, dashd)
-allow init input_device:chr_file getattr;
-allow init pmsg_device:chr_file open;
-allow init debugfs:dir mounton;
-allow init self:netlink_socket { create setopt bind getattr write read };
-allow init perfd:unix_stream_socket connectto;
-allow init proc_touchpanel:file write;
-allow init proc_kernel_sched:file write;
+allow init proc_touchpanel:file rw_file_perms;
+
+# required for LD_SHIM_LIBS
 allow init { domain -lmkd -crash_dump }:process noatsecure;

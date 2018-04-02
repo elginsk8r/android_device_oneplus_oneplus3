@@ -1,3 +1,0 @@
-get_prop(audioserver, diag_prop);
-allow audioserver perfd_data_file:sock_file write;
-allow audioserver perfd:unix_stream_socket connectto;
