@@ -17,3 +17,7 @@
 PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/aosp_oneplus3.mk \
     $(LOCAL_DIR)/ev_oneplus3.mk
+
+COMMON_LUNCH_CHOICES := \
+    aosp_oneplus3-userdebug  \
+    ev_oneplus3-userdebug 
