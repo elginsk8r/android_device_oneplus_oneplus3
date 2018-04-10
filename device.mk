@@ -178,7 +178,8 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-impl
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    qcom.bluetooth.soc=rome
+    qcom.bluetooth.soc=rome \
+    vendor.qcom.bluetooth.soc=rome
 
 # Camera
 PRODUCT_PACKAGES += \
