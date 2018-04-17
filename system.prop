@@ -163,7 +163,7 @@ ro.cutoff_voltage_mv=3250
 #endif
 
 #property for game detection feature
-debug.enable.gamed=0
+vendor.debug.enable.gamed=0
 
 #Disable face beautification
 persist.ts.postmakeup=false
