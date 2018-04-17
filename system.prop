@@ -162,7 +162,7 @@ ro.vendor.qti.sys.fw.bg_apps_limit=60
 Camera.no_navigation_bar=true
 
 #property for game detection feature
-debug.enable.gamed=0
+vendor.debug.enable.gamed=0
 
 #properties for limiting preview size in camera
 persist.vendor.camera.display.umax=1920x1080
