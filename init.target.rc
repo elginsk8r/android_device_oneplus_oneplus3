@@ -395,7 +395,7 @@ service energy-awareness /system/vendor/bin/energy-awareness
     group system
     oneshot
 
-service hvdcp_opti /system/vendor/bin/hvdcp_opti
+service vendor.hvdcp_opti /system/vendor/bin/hvdcp_opti
     class main
     user root
     group system wakelock
@@ -411,7 +411,7 @@ on charger
     write /sys/module/lpm_levels/parameters/sleep_disabled 0
     wait /dev/block/bootdevice/by-name/system
     mount ext4 /dev/block/bootdevice/by-name/system /system ro barrier=1
-    start hvdcp_opti
+    start vendor.hvdcp_opti
 
 service dhcpcd_eth0 /system/vendor/bin/dhcpcd -ABKLG
 	class late_start
