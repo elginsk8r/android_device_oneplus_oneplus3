@@ -306,16 +306,19 @@ endif
 
 # system prop for Bluetooth SOC type
 PRODUCT_PROPERTY_OVERRIDES += \
-    qcom.bluetooth.soc=rome
+    qcom.bluetooth.soc=rome \
+    vendor.qcom.bluetooth.soc=rome
 
 # Set this true as ROME which is programmed
 # as embedded wipower mode by deafult
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.bluetooth.emb_wp_mode=true
+    ro.bluetooth.emb_wp_mode=true \
+    ro.vendor.bluetooth.emb_wp_mode=true
 
 #system prop for wipower support
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.bluetooth.wipower=true
+    ro.bluetooth.wipower=true \
+    ro.vendor.bluetooth.wipower=true
 
 #Thermal
 PRODUCT_PACKAGES += android.hardware.thermal@1.0-impl \
