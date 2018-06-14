@@ -34,7 +34,7 @@ debug.sf.recomputecrop=0
 #
 # system props for the cne module
 #
-persist.cne.feature=1
+persist.vendor.cne.feature=1
 
 #system prop for enabling/disabling Android XLAT
 persist.net.doxlat=false
