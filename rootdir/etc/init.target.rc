@@ -97,6 +97,15 @@ service qcamerasvr /system/vendor/bin/mm-qcamera-daemon
     group camera system inet input graphics
     writepid /dev/cpuset/camera-daemon/tasks /dev/stune/top-app/tasks
 
+on property:init.svc.media=restarting
+    restart qcamerasvr
+
+on property:init.svc.servicemanager=restarting
+    restart qcamerasvr
+
+on property:vold.decrypt=trigger_restart_framework
+    restart vendor.camera-provider-2-4
+
 #fingerprint service
 service fingerprintd /system/vendor/bin/fingerprintd
     class late_start
