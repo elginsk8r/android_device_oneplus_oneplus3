@@ -303,7 +303,6 @@ endif
 
 # system prop for Bluetooth SOC type
 PRODUCT_PROPERTY_OVERRIDES += \
-    qcom.bluetooth.soc=rome \
     vendor.qcom.bluetooth.soc=rome
 
 # Set this true as ROME which is programmed
