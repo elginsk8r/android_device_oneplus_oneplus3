@@ -80,49 +80,6 @@ start_vm_bms()
 	fi
 }
 
-start_msm_irqbalance_8939()
-{
-	if [ -f /system/vendor/bin/msm_irqbalance ]; then
-		case "$platformid" in
-		    "239" | "293" | "294" | "295" | "304" | "313" | "338" | "351" )
-			start vendor.msm_irqbalance;;
-		esac
-	fi
-}
-
-start_msm_irqbalance_8952()
-{
-        if [ -f /system/vendor/bin/msm_irqbalance ]; then
-                case "$platformid" in
-                     "241" | "263" | "264" | "268" | "269" | "270" | "271")
-                        start vendor.msm_irqbalance;;
-                esac
-                case "$platformid" in
-                     "266" | "274" | "277" | "278")
-                        start vendor.msm_irqbal_lb;;
-                esac
-	fi
-}
-
-start_msm_irqbalance660()
-{
-	if [ -f /vendor/bin/msm_irqbalance ]; then
-		case "$platformid" in
-		    "317" | "324" | "325" | "326" | "345" | "346")
-			start vendor.msm_irqbalance;;
-		    "318" | "327")
-			start vendor.msm_irqbl_sdm630;;
-		esac
-	fi
-}
-
-start_msm_irqbalance()
-{
-	if [ -f /vendor/bin/msm_irqbalance ]; then
-		start vendor.msm_irqbalance
-	fi
-}
-
 start_copying_prebuilt_qcril_db()
 {
     if [ -f /vendor/radio/qcril_database/qcril.db -a ! -f /data/vendor/radio/qcril.db ]; then
