@@ -183,3 +183,6 @@ TARGET_RECOVERY_UI_LIB := librecovery_ui_msm
 HAVE_SYNAPTICS_DSX_FW_UPGRADE := true
 
 BOARD_HAL_STATIC_LIBRARIES := libhealthd.msm
+
+#Enable DRM plugins 64 bit compilation
+TARGET_ENABLE_MEDIADRM_64 := true
