@@ -60,7 +60,6 @@ on post-fs-data
     mkdir /data/misc/seemp 0700 system system
     mkdir /data/usf 0700 system system
     mkdir /data/misc/tloc/ 0700 system drmrpc
-    mkdir /data/misc/qvr 0770 system system
     mkdir /data/misc/audio_pp 0771 media audio
 
    # Add a cpuset for the camera daemon
@@ -115,12 +114,6 @@ service fps_hal /system/vendor/bin/fingerprint.qcom
     class late_start
     user system
     group system input
-
-service qvrd /system/vendor/bin/qvrservice
-    class late_start
-    user system
-    group system camera graphics
-    socket qvrservice stream 0666 system system
 
 #Start up peripheral manager
 service per_mgr /vendor/bin/pm-service
@@ -341,7 +334,6 @@ service vendor.ims_rtp_daemon /system/vendor/bin/ims_rtp_daemon
    class main
    user system
    group radio diag inet log
-   disabled
 
 service vendor.imsrcsservice /system/vendor/bin/imsrcsd
    class main
@@ -349,7 +341,7 @@ service vendor.imsrcsservice /system/vendor/bin/imsrcsd
    group radio diag inet log wakelock
 
 on property:vendor.ims.DATA_DAEMON_STATUS=1
-    start vendor.ims_rtp_daemon
+    restart vendor.ims_rtp_daemon
 
 service dts_configurator /system/vendor/bin/dts_configurator
     class late_start
@@ -390,7 +382,7 @@ service energy-awareness /system/vendor/bin/energy-awareness
     group system
     oneshot
 
-service hvdcp_opti /system/vendor/bin/hvdcp_opti
+service vendor.hvdcp_opti /system/vendor/bin/hvdcp_opti
     class main
     user root
     group system wakelock
@@ -406,7 +398,7 @@ on charger
     write /sys/module/lpm_levels/parameters/sleep_disabled 0
     wait /dev/block/bootdevice/by-name/system
     mount ext4 /dev/block/bootdevice/by-name/system /system ro barrier=1
-    start hvdcp_opti
+    start vendor.hvdcp_opti
 
 service dhcpcd_eth0 /system/vendor/bin/dhcpcd -ABKLG
 	class late_start
