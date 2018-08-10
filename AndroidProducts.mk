@@ -15,4 +15,5 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/aosp_oneplus3.mk
+    $(LOCAL_DIR)/aosp_oneplus3.mk \
+    $(LOCAL_DIR)/ev_oneplus3.mk
