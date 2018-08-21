@@ -387,7 +387,7 @@ lib64/hw/fingerprint.msm8996.so
 lib64/lib_fpc_tac_shared.so
 
 # NFC firmware
-vendor/firmware/libpn548ad_fw.so
+vendor/firmware/libpn548ad_fw.so:vendor/lib/libpn548ad_fw.so
 
 # Radio - factory
 lib64/libparam.so
