@@ -631,16 +631,6 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             <instance>default</instance>
         </interface>
     </hal>
-    <!-- Voiceprint Service -->
-    <hal format="hidl">
-        <name>vendor.qti.voiceprint</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IQtiVoicePrintService</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
     <!-- WIGIG network performance tuner service -->
     <hal format="hidl">
         <name>vendor.qti.hardware.wigig.netperftuner</name>
