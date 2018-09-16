@@ -51,10 +51,16 @@ vendor/lib64/soundfx/libqcvirt.so
 vendor/lib64/soundfx/libshoebox.so
 
 # Bluetooth
+lib/com.qualcomm.qti.ant@1.0.so
+-lib/libantradio.so
+lib64/com.qualcomm.qti.ant@1.0.so
+-lib64/libantradio.so
 vendor/bin/btnvtool
 vendor/bin/hci_qcomm_init
-vendor/bin/wcnss_filter|9a99d472b0c0f05c2a7bbfae065d535f4d89c46e
-vendor/lib/libbtnv.so
+vendor/bin/wcnss_filter
+vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
+vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc
+vendor/lib64/com.qualcomm.qti.ant@1.0_vendor.so
 vendor/lib64/libaptX_encoder.so
 vendor/lib64/libaptXHD_encoder.so
 vendor/lib64/libbtnv.so
