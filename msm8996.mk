@@ -240,20 +240,6 @@ PRODUCT_PACKAGES += \
 #PRODUCT_PACKAGE_OVERLAYS := $(QCPATH)/qrdplus/Extension/res \
         $(PRODUCT_PACKAGE_OVERLAYS)
 
-# Enable logdumpd service only for non-perf bootimage
-ifeq ($(findstring perf,$(KERNEL_DEFCONFIG)),)
-    ifeq ($(TARGET_BUILD_VARIANT),user)
-        PRODUCT_DEFAULT_PROPERTY_OVERRIDES+= \
-            ro.logdumpd.enabled=0
-    else
-        #PRODUCT_DEFAULT_PROPERTY_OVERRIDES+= \
-            ro.logdumpd.enabled=1
-    endif
-else
-    PRODUCT_DEFAULT_PROPERTY_OVERRIDES+= \
-        ro.logdumpd.enabled=0
-endif
-
 #-include $(QCPATH)/common/config/rendering-engine.mk
 #ifneq (,$(strip $(wildcard $(PRODUCT_RENDERING_ENGINE_REVLIB))))
 #        MULTI_LANG_ENGINE := REVERIE
