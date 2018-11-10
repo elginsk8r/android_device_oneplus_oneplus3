@@ -223,7 +223,13 @@ TARGET_LD_SHIM_LIBS := \
     /system/product/lib64/libdpmframework.so|libcutils_shim.so
 
 # Symlinks
-TARGET_MOUNT_POINTS_SYMLINKS := false
+TARGET_MOUNT_POINTS_SYMLINKS ?= false
+ifneq ($(TARGET_MOUNT_POINTS_SYMLINKS),true)
+BOARD_ROOT_EXTRA_SYMLINKS := \
+    /vendor/dsp:/dsp \
+    /vendor/firmware_mnt:/firmware \
+    /vendor/bt_firmware:/bt_firmware
+endif
 
 # Treble
 #PRODUCT_FULL_TREBLE_OVERRIDE := true
