@@ -201,3 +201,8 @@ endif
 
 #Enable DRM plugins 64 bit compilation
 TARGET_ENABLE_MEDIADRM_64 := true
+
+ifeq ($(strip $(TARGET_KERNEL_VERSION)), 4.4)
+#Set Board VNDK Version To Current
+BOARD_VNDK_VERSION:= current
+endif

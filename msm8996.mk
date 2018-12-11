@@ -313,6 +313,13 @@ PRODUCT_PACKAGES += android.hardware.thermal@1.0-impl \
 
 SDM660_DISABLE_MODULE := true
 
+ifeq ($(strip $(TARGET_KERNEL_VERSION)), 3.18)
 # Enable extra vendor libs
 ENABLE_EXTRA_VENDOR_LIBS := true
 PRODUCT_PACKAGES += vendor-extra-libs
+endif
+
+ifeq ($(strip $(TARGET_KERNEL_VERSION)), 4.4)
+# Enable vndk-sp Libraries
+PRODUCT_PACKAGES += vndk_package
+endif
