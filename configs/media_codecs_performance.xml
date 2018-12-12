@@ -117,8 +117,8 @@ limitations under the License.
             <Limit name="measured-frame-rate-352x288" range="386-386" />
             <Limit name="measured-frame-rate-640x360" range="233-238" />
             <Limit name="measured-frame-rate-720x480" range="219-220" />
-            <Limit name="measured-frame-rate-1280x720" range="40-54" />
-            <Limit name="measured-frame-rate-1920x1080" range="21-21" />
+            <Limit name="measured-frame-rate-1280x720" range="125-125" />
+            <Limit name="measured-frame-rate-1920x1080" range="78-78" />
         </MediaCodec>
         <MediaCodec name="OMX.google.mpeg4.decoder" update="true">
             <Type name="video/mp4v-es">
