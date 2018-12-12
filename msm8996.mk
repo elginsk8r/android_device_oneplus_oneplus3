@@ -312,6 +312,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES += android.hardware.thermal@1.0-impl \
                     android.hardware.thermal@1.0-service
 
+# Set TARGET_MOUNT_POINTS_SYMLINKS to false
+TARGET_MOUNT_POINTS_SYMLINKS := false
+
 SDM660_DISABLE_MODULE := true
 
 ifeq ($(strip $(TARGET_KERNEL_VERSION)), 3.18)
