@@ -340,3 +340,9 @@ PRODUCT_COMPATIBLE_PROPERTY_OVERRIDE:=true
 TARGET_USES_MKE2FS := true
 $(call inherit-product, build/make/target/product/product_launched_with_p.mk)
 endif
+
+ifeq ($(ENABLE_KM_4_0), true)
+    DEVICE_MANIFEST_FILE += device/qcom/msm8996/keymaster.xml
+else
+    DEVICE_MANIFEST_FILE += device/qcom/msm8996/keymaster_ota.xml
+endif

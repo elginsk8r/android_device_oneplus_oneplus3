@@ -98,10 +98,20 @@ include $(CLEAR_VARS)
 LOCAL_MODULE       := fstab.qcom
 LOCAL_MODULE_TAGS  := optional eng
 LOCAL_MODULE_CLASS := ETC
-ifeq ($(ENABLE_AB), true)
-  LOCAL_SRC_FILES    := fstab_AB_variant.qti
+ ifneq ($(wildcard kernel/msm-3.18),)
+    ifeq ($(ENABLE_AB), true)
+      LOCAL_SRC_FILES    := fstabs-3.18/fstab_AB_variant.qti
+    else
+      LOCAL_SRC_FILES    := fstabs-3.18/fstab_non_AB_variant.qti
+    endif
+else ifneq ($(wildcard kernel/msm-4.4),)
+    ifeq ($(ENABLE_AB), true)
+      LOCAL_SRC_FILES    := fstabs-4.4/fstab_AB_variant.qti
+    else
+      LOCAL_SRC_FILES    := fstabs-4.4/fstab_non_AB_variant.qti
+    endif
 else
-  LOCAL_SRC_FILES    := fstab_non_AB_variant.qti
+   $(warning "Unknown kernel")
 endif
 LOCAL_MODULE_PATH  := $(TARGET_OUT_VENDOR_ETC)
 include $(BUILD_PREBUILT)

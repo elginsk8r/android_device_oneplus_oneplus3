@@ -72,18 +72,36 @@ endif
 BOARD_BOOTIMG_HEADER_VERSION := 1
 BOARD_MKBOOTIMG_ARGS := --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
 
-ifeq ($(ENABLE_AB), true)
-  ifeq ($(ENABLE_VENDOR_IMAGE),true)
-    TARGET_RECOVERY_FSTAB := device/qcom/msm8996/recovery_AB_split_variant.fstab
-  else
-    TARGET_RECOVERY_FSTAB := device/qcom/msm8996/recovery_AB_non-split_variant.fstab
-  endif
+ifneq ($(wildcard kernel/msm-3.18),)
+    ifeq ($(ENABLE_AB),true)
+      ifeq ($(ENABLE_VENDOR_IMAGE), true)
+        TARGET_RECOVERY_FSTAB := device/qcom/msm8996/fstabs-3.18/recovery_AB_split_variant.fstab
+      else
+        TARGET_RECOVERY_FSTAB := device/qcom/msm8996/fstabs-3.18/recovery_AB_non-split_variant.fstab
+      endif
+    else
+      ifeq ($(ENABLE_VENDOR_IMAGE), true)
+        TARGET_RECOVERY_FSTAB := device/qcom/msm8996/fstabs-3.18/recovery_non-AB_split_variant.fstab
+      else
+        TARGET_RECOVERY_FSTAB := device/qcom/msm8996/fstabs-3.18/recovery_non-AB_non-split_variant.fstab
+      endif
+    endif
+else ifneq ($(wildcard kernel/msm-4.4),)
+    ifeq ($(ENABLE_AB),true)
+      ifeq ($(ENABLE_VENDOR_IMAGE), true)
+        TARGET_RECOVERY_FSTAB := device/qcom/msm8996/fstabs-4.4/recovery_AB_split_variant.fstab
+      else
+        TARGET_RECOVERY_FSTAB := device/qcom/msm8996/fstabs-4.4/recovery_AB_non-split_variant.fstab
+      endif
+    else
+      ifeq ($(ENABLE_VENDOR_IMAGE), true)
+        TARGET_RECOVERY_FSTAB := device/qcom/msm8996/fstabs-4.4/recovery_non-AB_split_variant.fstab
+      else
+        TARGET_RECOVERY_FSTAB := device/qcom/msm8996/fstabs-4.4/recovery_non-AB_non-split_variant.fstab
+      endif
+    endif
 else
-  ifeq ($(ENABLE_VENDOR_IMAGE),true)
-    TARGET_RECOVERY_FSTAB := device/qcom/msm8996/recovery_non-AB_split_variant.fstab
-  else
-    TARGET_RECOVERY_FSTAB := device/qcom/msm8996/recovery_non-AB_non-split_variant.fstab
-  endif
+    $(warning "Unknown kernel")
 endif
 
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 3221225472
@@ -130,8 +148,14 @@ BOARD_EGL_CFG := device/qcom/$(TARGET_BOARD_PLATFORM)/egl.cfg
 
 BOARD_KERNEL_BASE        := 0x80000000
 BOARD_KERNEL_PAGESIZE    := 4096
-BOARD_KERNEL_TAGS_OFFSET := 0x02000000
-BOARD_RAMDISK_OFFSET     := 0x02200000
+
+ifeq ($(strip $(TARGET_KERNEL_VERSION)), 4.4)
+    BOARD_KERNEL_TAGS_OFFSET := 0x02A00000
+    BOARD_RAMDISK_OFFSET     := 0x02C00000
+else
+    BOARD_KERNEL_TAGS_OFFSET := 0x02000000
+    BOARD_RAMDISK_OFFSET     := 0x02200000
+endif
 
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
@@ -149,7 +173,11 @@ TARGET_INIT_VENDOR_LIB := libinit_msm
 #Enable Peripheral Manager
 TARGET_PER_MGR_ENABLED := true
 
-TARGET_HW_DISK_ENCRYPTION := true
+ifeq ($(TARGET_KERNEL_VERSION),4.4)
+    TARGET_HW_DISK_ENCRYPTION := false
+else
+    TARGET_HW_DISK_ENCRYPTION := true
+endif
 
 TARGET_CRYPTFS_HW_PATH := device/qcom/common/cryptfs_hw
 
