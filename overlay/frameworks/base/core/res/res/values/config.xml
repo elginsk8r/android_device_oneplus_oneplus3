@@ -406,6 +406,9 @@
     <!-- Specifies whether to decouple the auto-suspend state of the device from the display on/off state. -->
     <bool name="config_powerDecoupleAutoSuspendModeFromDisplay">true</bool>
 
+    <!-- If device supports pickup/lift gesture -->
+    <bool name="config_dozePulsePickup">true</bool>
+
     <!-- List of biometric sensors on the device, in decreasing strength. Consumed by AuthService
          when registering authenticators with BiometricService. Format must be ID:Modality:Strength,
          where: IDs are unique per device, Modality as defined in BiometricAuthenticator.java,
