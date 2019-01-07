@@ -71,6 +71,7 @@ firmware_directories /vendor/firmware_mnt/image/
 
 /dev/radio0               0640   system     system
 /dev/rfcomm0              0660   bluetooth  bluetooth
+/dev/ttyMSM0              0600   bluetooth  bluetooth
 /dev/ttyUSB0              0660   bluetooth  bluetooth
 /dev/smdcntl0             0640   radio      radio
 /dev/smdcntl1             0640   radio      radio
@@ -200,6 +201,7 @@ firmware_directories /vendor/firmware_mnt/image/
 /dev/msm_amrwb            0660   system     audio
 /dev/msm_amrwbplus        0660   system     audio
 /dev/msm_aac              0660   system     audio
+/dev/msm_mp3*             0660   system     audio
 /dev/msm_multi_aac        0660   system     audio
 /dev/msm_aac_in           0660   system     audio
 /dev/msm_qcelp_in         0660   system     audio
