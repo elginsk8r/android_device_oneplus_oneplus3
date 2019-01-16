@@ -425,4 +425,6 @@
     <!-- Whether the display blanks itself when going from a doze to a non-doze state -->
     <bool name="config_displayBlanksAfterDoze">true</bool>
 
+    <!-- True if the firmware supports connected MAC randomization -->
+    <bool name="config_wifi_connected_mac_randomization_supported">true</bool>
 </resources>
