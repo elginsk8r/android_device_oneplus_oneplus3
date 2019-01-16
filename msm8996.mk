@@ -27,7 +27,15 @@ endif
 TARGET_USES_NQ_NFC := false # bring-up hack
 BOARD_FRP_PARTITION_NAME :=frp
 
-TARGET_KERNEL_VERSION := 3.18
+ifneq ($(wildcard kernel/msm-3.18),)
+    TARGET_KERNEL_VERSION := 3.18
+    $(warning "Build with 3.18 kernel.")
+else ifneq ($(wildcard kernel/msm-4.4),)
+    TARGET_KERNEL_VERSION := 4.4
+    $(warning "Build with 4.4 kernel")
+else
+    $(warning "Unknown kernel")
+endif
 
 #QTIC flag
 -include $(QCPATH)/common/config/qtic-config.mk
