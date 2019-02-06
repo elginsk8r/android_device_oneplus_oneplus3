@@ -609,4 +609,13 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             <instance>default</instance>
         </interface>
     </hal>
+    <!-- BluetoothSar service-->
+    <hal format="hidl" optional="true">
+        <name>vendor.qti.hardware.bluetooth_sar</name>
+        <version>1.0</version>
+        <interface>
+            <name>IBluetoothSar</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
 </compatibility-matrix>
