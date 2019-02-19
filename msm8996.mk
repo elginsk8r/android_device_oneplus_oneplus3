@@ -37,6 +37,11 @@ else
     $(warning "Unknown kernel")
 endif
 
+ifeq ($(strip $(TARGET_KERNEL_VERSION)), 4.4)
+# Enable AVB 2.0
+BOARD_AVB_ENABLE := true
+endif
+
 #QTIC flag
 -include $(QCPATH)/common/config/qtic-config.mk
 
