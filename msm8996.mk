@@ -273,6 +273,11 @@ ifeq ($(ENABLE_VENDOR_IMAGE), true)
 KMGK_USE_QTI_SERVICE := true
 endif
 
+ifeq ($(strip $(TARGET_KERNEL_VERSION)), 4.4)
+#Enable KEYMASTER 4.0
+ENABLE_KM_4_0 := true
+endif
+
 #Enable AOSP KEYMASTER and GATEKEEPER HIDLs
 ifneq ($(KMGK_USE_QTI_SERVICE), true)
 PRODUCT_PACKAGES += android.hardware.gatekeeper@1.0-impl \
