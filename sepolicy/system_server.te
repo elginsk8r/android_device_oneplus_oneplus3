@@ -1,6 +1,2 @@
-get_prop(system_server, vendor_camera_prop)
-allow system_server sysfs_battery_supply:dir search;
-allow system_server sysfs_battery_supply:file { getattr open read };
-
 # OTA with encrypted f2fs
 allow system_server ota_package_file:dir getattr;

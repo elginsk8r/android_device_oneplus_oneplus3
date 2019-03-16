@@ -1,1 +1,1 @@
-allow hal_bluetooth_qti diag_device:chr_file { read write open ioctl getattr };
+r_dir_file(hal_bluetooth_qti, vendor_radio_data_file)
