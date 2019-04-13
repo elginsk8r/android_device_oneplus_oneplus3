@@ -66,6 +66,21 @@ function blob_fixup() {
     vendor/*/hw/vulkan.msm8996.so)
         patchelf --set-soname "vulkan.msm8996.so" "${2}"
     ;;
+    vendor/lib/libmmcamera2_sensor_modules.so)
+        sed -i "s|/system/etc/camera/|/vendor/etc/camera/|g" "${2}"
+    ;;
+    vendor/lib64/libremosaiclib.so)
+        sed -i "s|/system/lib/qpd_dspcl_v2.bin|/vendor/lib/qpd_dspcl_v2.bin|g" "${2}"
+        sed -i "s|/system/lib/qpd_dspcl_v2.cl|/vendor/lib/qpd_dspcl_v2.cl|g" "${2}"
+        sed -i "s|/system/lib/TC_Bayer_Converter_v6_core_opt.bin|/vendor/lib/TC_Bayer_Converter_v6_core_opt.bin|g" "${2}"
+        sed -i "s|/system/lib/TC_Bayer_Converter_v6_core_opt.cl|/vendor/lib/TC_Bayer_Converter_v6_core_opt.cl|g" "${2}"
+    ;;
+    vendor/lib/libopcamera_native_modules.so)
+        sed -i "s|/system/lib/libmpbase.so|/vendor/lib/libmpbase.so|g" "${2}"
+        sed -i "s|/system/lib/libmorpho_video_refiner.so|/vendor/lib/libmorpho_video_refiner.so|g" "${2}"
+        sed -i "s|/system/lib/libmorpho_image_stab4.so|/vendor/lib/libmorpho_image_stab4.so|g" "${2}"
+        sed -i "s|/system/lib/libmmjpeg_interface.so|/vendor/lib/libmmjpeg_interface.so|g" "${2}"
+    ;;
     esac
 }
 

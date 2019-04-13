@@ -38,7 +38,7 @@ vendor/lib/rfsa/adsp/libvpp_svc_skel.so|535edf13dda82e200d8cfe6d704dfbcbd3d782f7
 
 # Alipay - from OxygenOS
 -priv-app/IFAAService/IFAAService.apk|9b33bb59459c202b7e9777cc763febc7ef0d58a1
-lib64/vendor.oneplus.hardware.ifaa@2.0.so|fbe1d8dba89f2bc95e98716f95d63101b285b804
+lib64/vendor.oneplus.hardware.ifaa@2.0.so:vendor/lib64/vendor.oneplus.hardware.ifaa@2.0.so|fbe1d8dba89f2bc95e98716f95d63101b285b804
 vendor/bin/hw/vendor.oneplus.hardware.ifaa@2.0-service|25dd6f8fae986b1dddf547c1b106598c86b16b56
 vendor/etc/init/vendor.oneplus.hardware.ifaa@2.0-service.rc|17f485f5523372cc627503f36f1e84348233b777
 
@@ -50,7 +50,7 @@ vendor/lib64/com.qualcomm.qti.ant@1.0.so
 vendor/lib64/hw/com.qualcomm.qti.ant@1.0-impl.so
 
 # Audio - from OxygenOS
-etc/firmware/tfa98xx.cnt|4c6acd032186f062fe6c5af58fb82fca91fccbcd
+etc/firmware/tfa98xx.cnt:vendor/etc/firmware/tfa98xx.cnt|4c6acd032186f062fe6c5af58fb82fca91fccbcd
 vendor/lib/libacdb-fts.so|100e698279595c86656d5c1fa1773863b4cd05f3
 vendor/lib/libacdbloader.so|b28fa1c9f39bc4f4641307c442a20cf53dd2acb8
 vendor/lib/libacdbrtac.so|25ea2d51f215c1e5e06b298d7c93097e93db7a63
@@ -97,17 +97,17 @@ product/lib64/libaptX_encoder.so|df1c89d7af1bb35808d5fe3496b04ba066c10cbc
 product/lib64/libaptXHD_encoder.so|e13fa70c97caaa24d061678bdee608eb8850a69e
 
 # Camera - from OxygenOS
-etc/camera/camera_config.xml|ec7fd92267310dec7235b9b0a7aec0de7eb6c492
-etc/camera/csidtg_camera.xml|406e2dec13dc910415ff72fc5a7ee084c97ab61f
-etc/camera/csidtg_chromatix.xml|e95fad08db854906529b4df3c1b238ebbb36b2df
-etc/camera/imx179_chromatix.xml|925eeb315fb9c44db80b311a4399a9b21fd300b5
-etc/camera/imx298_chromatix.xml|78831e55f5c6eeb6fa04fbb9141434e74988b110
-etc/camera/s5k3p8_chromatix.xml|fa9dd76a98cf9c1e3701d4d04eece107ae2eb504
-etc/camera/s5k3p8sp_chromatix.xml|1b530db3c1a423dfb459f3b1fcfc0c203ea195cd
-lib/libmm-qcamera.so|c8aa1a057e24aa60ded512ef6f99a3ab6b896810
-lib/libqomx_core.so|cf551b7d765bc01d0b0a5030d96dfd5c5652f783
+etc/camera/camera_config.xml:vendor/etc/camera/camera_config.xml|ec7fd92267310dec7235b9b0a7aec0de7eb6c492
+etc/camera/csidtg_camera.xml:vendor/etc/camera/csidtg_camera.xml|406e2dec13dc910415ff72fc5a7ee084c97ab61f
+etc/camera/csidtg_chromatix.xml:vendor/etc/camera/csidtg_chromatix.xml|e95fad08db854906529b4df3c1b238ebbb36b2df
+etc/camera/imx179_chromatix.xml:vendor/etc/camera/imx179_chromatix.xml|925eeb315fb9c44db80b311a4399a9b21fd300b5
+etc/camera/imx298_chromatix.xml:vendor/etc/camera/imx298_chromatix.xml|78831e55f5c6eeb6fa04fbb9141434e74988b110
+etc/camera/s5k3p8_chromatix.xml:vendor/etc/camera/s5k3p8_chromatix.xml|fa9dd76a98cf9c1e3701d4d04eece107ae2eb504
+etc/camera/s5k3p8sp_chromatix.xml:vendor/etc/camera/s5k3p8sp_chromatix.xml|1b530db3c1a423dfb459f3b1fcfc0c203ea195cd
+lib/libmm-qcamera.so:vendor/lib/libmm-qcamera.so|c8aa1a057e24aa60ded512ef6f99a3ab6b896810
+lib/libqomx_core.so:vendor/lib/libqomx_core.so|cf551b7d765bc01d0b0a5030d96dfd5c5652f783
 vendor/bin/mm-qcamera-daemon|7dd6a0fddaa50495ba3db8624775628fc7616266
-vendor/lib/hw/camera.msm8996.so|182e87d65a229f303bb23de8420b1162c321c631
+vendor/lib/hw/camera.msm8996.so|182e87d65a229f303bb23de8420b1162c321c631|788c6b5559d32777337b69281a2403cc375d67c9
 vendor/lib/libflash_pmic.so|3db55555d4c2ae64aa18857a97af250721c8241c
 vendor/lib/libjpegdhw.so|e158cb574a5277c202b33972056843d1744ded6a
 vendor/lib/libjpegdmahw.so|dc0bb4d26dc78a63fcfa3ca8be8e87f6a6636408
@@ -157,9 +157,9 @@ vendor/lib/libmmcamera2_mct.so|929b7bbbfd2b2defb37c096514a3242f7a06a1e0
 vendor/lib/libmmcamera2_pp_buf_mgr.so|3641d2551e25860c4598d1f8198bee29ab865bef
 vendor/lib/libmmcamera2_pproc_modules.so|249422a4cdc6ee0f7f09cb287c2cd4ef7798d912
 vendor/lib/libmmcamera2_q3a_core.so|1cbbfc0ad2afad944e82b781b50de29112e1a1b0
-vendor/lib/libmmcamera2_sensor_modules.so|bdfafe3e14f4ea879244e6e56f1a9f8383cdbd1b
+vendor/lib/libmmcamera2_sensor_modules.so|bdfafe3e14f4ea879244e6e56f1a9f8383cdbd1b|32317f90b50bb2dd36ada8c8790d0d0462b4b829
 vendor/lib/libmmcamera2_stats_algorithm.so|4066d5e5b03b95bec6cc3385f6e4e827003c71bd
-vendor/lib/libmmcamera2_stats_modules.so|3cf1d13db1f619b0c3b7e7b6db6c274b617042fc
+vendor/lib/libmmcamera2_stats_modules.so|3cf1d13db1f619b0c3b7e7b6db6c274b617042fc|fb1472b3a13efeffdc3fe0ff1c11137828f5f85b
 vendor/lib/libmmjpeg_interface.so|fa7ee14aa5eaa422d811b7f4529a77ecca08f792
 vendor/lib/libmmjpeg.so|8ac99f36eb225fa0d7ce1df392572d06df28bcdc
 vendor/lib/libmmqjpeg_codec.so|8a3f668f39a25daf470c5540a598691e58616fe1
@@ -318,13 +318,13 @@ vendor/lib/libchromatix_s5k3p8sp_isp_4608x3456_30fps_video.so|e56559cb46c8ed19a3
 vendor/lib/libchromatix_s5k3p8sp_postproc.so|2789f2eb3a6b1859182c32ede7f8c2bea9a1bfdb
 
 # Camera firmware - from OxygenOS
-etc/firmware/cpp_firmware_v1_10_0.fw|cf9458601aa4bbe9c57acfc1c7d0f158386ace9f
+etc/firmware/cpp_firmware_v1_10_0.fw:vendor/firmware/cpp_firmware_v1_10_0.fw|cf9458601aa4bbe9c57acfc1c7d0f158386ace9f
 
 # Camera postprocessing - from OxygenOS
-lib/lib_oneplus_md.so|31f97c9029f31ceea552122d901dc0991cbe25f5
-lib/libFNVfbEngineHAL.so|5090ca4c4cb62b38b910e94c350987b100350b9a
-lib/qpd_dspcl_v2.bin|48ea4fd60ec33ee320cfdf17d396c66fad9d80a0
-lib/TC_Bayer_Converter_v6_core_opt.bin|95c3bcbb9d6e6d210179ed91322172f5f895473f
+lib/lib_oneplus_md.so:vendor/lib/lib_oneplus_md.so|31f97c9029f31ceea552122d901dc0991cbe25f5
+lib/libFNVfbEngineHAL.so:vendor/lib/libFNVfbEngineHAL.so|5090ca4c4cb62b38b910e94c350987b100350b9a|564cdc9885993f2969fccd4598844fc5ae50b5a7
+lib/qpd_dspcl_v2.bin:vendor/lib/qpd_dspcl_v2.bin|48ea4fd60ec33ee320cfdf17d396c66fad9d80a0
+lib/TC_Bayer_Converter_v6_core_opt.bin:vendor/lib/TC_Bayer_Converter_v6_core_opt.bin|95c3bcbb9d6e6d210179ed91322172f5f895473f
 vendor/bin/remosaic_daemon|abcca88fb2d16170387c9cfb4ec238222429e785
 vendor/etc/fsync_db.config|f6eb6456039e5c0ee3f00a857883cafc3987b270
 vendor/etc/GyroOffset_db.config|c90cdbb5740cb8390cac2ae7549d0e991932e23c
@@ -381,14 +381,14 @@ vendor/lib/libop_xobjdetect.so|7a114ba61479597d26cd7c7936a9f9ff91be6acd
 vendor/lib/libop_xphoto.so|62772c51794de631f3a6193cf0a4a1096e1069c8
 vendor/lib/libop_zlib.so|aa9eec0d8a0fac838fe0d4ae5b855d99316c3ce3
 vendor/lib/libopcamera_crypt.so|49672581f0d7157a32ac4a9913eb5381fc3595fd
-vendor/lib/libopcamera_native_modules.so|cf06417fff3af69db95dac6f275368a2da1ae7c2
+vendor/lib/libopcamera_native_modules.so|cf06417fff3af69db95dac6f275368a2da1ae7c2|3c00610df7bc435e6c35526d0243335c7115c562
 vendor/lib/libremosaic_daemon.so|025bab69af285cedf5502ed6730e077cc727a5f0
 vendor/lib/libremosaic_tuning.so|91a66e587c953263d05a97de87c7e29189e7de57
 vendor/lib/libremosaiclib.so|a4892cad98a410ea95e1bb5332de346d3e8900db
 vendor/lib/libSensorManagerHAL.so|6b4543f924d5d7514a81ee63b3a5b4e379a975c5
 vendor/lib64/libremosaic_daemon.so|3c3c502b97e2a3784b7546d903a02d2b4e1e71ce
 vendor/lib64/libremosaic_tuning.so|5c4a311d80f30e359120adb866a243dc44f9f1b4
-vendor/lib64/libremosaiclib.so|00d20380c9687a7d738e61724c5d3f3cb7080eed
+vendor/lib64/libremosaiclib.so|00d20380c9687a7d738e61724c5d3f3cb7080eed|2a3998bead18d07cb517e3911682f3a8453e97cb
 
 # Camera sensors - from OxygenOS
 vendor/lib/libmmcamera_isp_abf47.so|6fce85f970e2fb38e78aa1ffd90cf6fdffd29370
@@ -539,9 +539,9 @@ vendor/etc/init/android.hardware.drm@1.2-service.widevine.rc
 vendor/lib64/libwvhidl.so
 
 # Fingerprint sensor - from OxygenOS
-lib64/fp_hal_extension.so|24c9f62c94c626253b2dc70e125602b00ced3cb1
-lib64/hw/fingerprint.msm8996.so|7893060dddb0719319f937da5fdba0604cb28e03
-lib64/lib_fpc_tac_shared.so|217e4490e27888bf4857d190d3cb14525135da53
+lib64/fp_hal_extension.so:vendor/lib64/fp_hal_extension.so|24c9f62c94c626253b2dc70e125602b00ced3cb1
+lib64/hw/fingerprint.msm8996.so:vendor/lib64/hw/fingerprint.msm8996.so|7893060dddb0719319f937da5fdba0604cb28e03
+lib64/lib_fpc_tac_shared.so:vendor/lib64/lib_fpc_tac_shared.so|217e4490e27888bf4857d190d3cb14525135da53
 
 # Gatekeeper - from OxygenOS
 vendor/lib/hw/gatekeeper.msm8996.so|a1e3756cb6e42f869ae1997028eaa9159478525b
@@ -853,7 +853,7 @@ vendor/etc/init/vendor.qti.rmt_storage.rc|bc212c6353c2ded44ae4d759605fbbe55aa4fa
 vendor/etc/init/vendor.qti.tftp.rc|091915c28a3bc574d39189688748cc922d9e65e4
 
 # Radio - param - from OxygenOS
-lib64/vendor.oneplus.hardware.param@1.0.so|1dfabf1fcae0040168b42688d5ba65f9127ba3ae
+lib64/vendor.oneplus.hardware.param@1.0.so:vendor/lib64/vendor.oneplus.hardware.param@1.0.so|1dfabf1fcae0040168b42688d5ba65f9127ba3ae
 vendor/bin/hw/vendor.oneplus.hardware.param@1.0-service|675af1749ed7bb28b4b612aeeefa4d7dd1cfb03f
 vendor/etc/init/vendor.oneplus.hardware.param@1.0-service.rc|f4c0325654ee11dfa0358be6ad6cdaaedd322c47
 
@@ -903,30 +903,30 @@ product/lib64/libimsmedia_jni.so
 -product/priv-app/ims/ims.apk
 
 # Radio - MBN - from OxygenOS
-etc/firmware/mbn_ota/mcfg_sw_NoCDMA/mbn_ota.txt|f1c4d20963277290b0e3d624303e994e72f67156
-etc/firmware/mbn_ota/mcfg_sw_NoCDMA/mcfg_sw_Airtel-Commercial.mbn|e32169d0a5f11a948f374548fa77e3c72119fa71
-etc/firmware/mbn_ota/mcfg_sw_NoCDMA/mcfg_sw_CMCC_Volte_OpenMkt-Commercial.mbn|63e04660f760d295b5a1dbf57bef6c36adec384e
-etc/firmware/mbn_ota/mcfg_sw_NoCDMA/mcfg_sw_CU_OpenMkt-Commercial.mbn|a41b37381ef55ee52750f86e0453d23d9025cb60
-etc/firmware/mbn_ota/mcfg_sw_NoCDMA/mcfg_sw_EE-Commercial.mbn|ff025dc29563352a75add21c0b6225144de2cbd8
-etc/firmware/mbn_ota/mcfg_sw_NoCDMA/mcfg_sw_Elisa-VoLTE.mbn|bd573abb3832bd3a9f4682723624b6722beba451
-etc/firmware/mbn_ota/mcfg_sw_NoCDMA/mcfg_sw_H3G-Commercial.mbn|85bb15611d11c4b89c07270aed73d5e3f44dfff9
-etc/firmware/mbn_ota/mcfg_sw_NoCDMA/mcfg_sw_H3GDK-Commercial.mbn|732818feba192b874c2f3b8d5fbf0bf45d30effa
-etc/firmware/mbn_ota/mcfg_sw_NoCDMA/mcfg_sw_Idea-Commercial.mbn|2a9868110c684e95149c348c8414c8f708e4b4a2
-etc/firmware/mbn_ota/mcfg_sw_NoCDMA/mcfg_sw_MTNL_BSNL.mbn|7447d63f256352ff73254b71c141feb25068757e
-etc/firmware/mbn_ota/mcfg_sw_NoCDMA/mcfg_sw_OEM_NoCDMA-Commercial.mbn|8dd36895a976afe6e07f46c53091214193a74bc1
-etc/firmware/mbn_ota/mcfg_sw_NoCDMA/mcfg_sw_OEM_Test-VoLTE.mbn|e53a5cbafa56d12fd40e09aeb59f8a0b80413451
-etc/firmware/mbn_ota/mcfg_sw_NoCDMA/mcfg_sw_Reliance-Commercial.mbn|7c43c4bea49bba6de3711bac35a8cfcd60de3277
-etc/firmware/mbn_ota/mcfg_sw_NoCDMA/mcfg_sw_UK-VoLTE.mbn|f05e92f80cf98dd74ff6d0052811b7bf9af27247
-etc/firmware/mbn_ota/mcfg_sw_NoCDMA/mcfg_sw_Vodafone-Commercial.mbn|391db2107975352d4534ed8bda37f70c2531372e
-etc/firmware/mbn_ota/mcfg_sw_NoCDMA/mcfg_sw_YTL-Commercial.mbn|9a8f6f28c0fa6c3d0b0ae0dbd572e108b261de7c
-etc/firmware/mbn_ota/mcfg_sw/mbn_ota.txt|5bb0f239aeaeaeb51bb43f89c66ba310415be6d2
-etc/firmware/mbn_ota/mcfg_sw/mcfg_sw_ATT-VoLTE.mbn|8fdf5f07774d86714505d1f5bb975fb8d80c1122
-etc/firmware/mbn_ota/mcfg_sw/mcfg_sw_CMCC_Volte_OpenMkt-Commercial.mbn|63e04660f760d295b5a1dbf57bef6c36adec384e
-etc/firmware/mbn_ota/mcfg_sw/mcfg_sw_CT_OpenMkt-Commercial.mbn|c23bac4d9bf6723da2f70658eaab6faf5a0b3a15
-etc/firmware/mbn_ota/mcfg_sw/mcfg_sw_CU_OpenMkt-Commercial.mbn|a41b37381ef55ee52750f86e0453d23d9025cb60
-etc/firmware/mbn_ota/mcfg_sw/mcfg_sw_OEM_CDMA-Commercial.mbn|b76a9fdc1c6d3e026714f443d5ee7fc6f3b05fb2
-etc/firmware/mbn_ota/mcfg_sw/mcfg_sw_OEM_Test-VoLTE.mbn|e53a5cbafa56d12fd40e09aeb59f8a0b80413451
-etc/firmware/mbn_ota/mcfg_sw/mcfg_sw_TMO-Commercial.mbn|38c59d0877542004f8e6dc12a7d9660311e66df2
+etc/firmware/mbn_ota/mcfg_sw_NoCDMA/mbn_ota.txt:vendor/firmware/mbn_ota/mcfg_sw_NoCDMA/mbn_ota.txt|f1c4d20963277290b0e3d624303e994e72f67156
+etc/firmware/mbn_ota/mcfg_sw_NoCDMA/mcfg_sw_Airtel-Commercial.mbn:vendor/firmware/mbn_ota/mcfg_sw_NoCDMA/mcfg_sw_Airtel-Commercial.mbn|e32169d0a5f11a948f374548fa77e3c72119fa71
+etc/firmware/mbn_ota/mcfg_sw_NoCDMA/mcfg_sw_CMCC_Volte_OpenMkt-Commercial.mbn:vendor/firmware/mbn_ota/mcfg_sw_NoCDMA/mcfg_sw_CMCC_Volte_OpenMkt-Commercial.mbn|63e04660f760d295b5a1dbf57bef6c36adec384e
+etc/firmware/mbn_ota/mcfg_sw_NoCDMA/mcfg_sw_CU_OpenMkt-Commercial.mbn:vendor/firmware/mbn_ota/mcfg_sw_NoCDMA/mcfg_sw_CU_OpenMkt-Commercial.mbn|a41b37381ef55ee52750f86e0453d23d9025cb60
+etc/firmware/mbn_ota/mcfg_sw_NoCDMA/mcfg_sw_EE-Commercial.mbn:vendor/firmware/mbn_ota/mcfg_sw_NoCDMA/mcfg_sw_EE-Commercial.mbn|ff025dc29563352a75add21c0b6225144de2cbd8
+etc/firmware/mbn_ota/mcfg_sw_NoCDMA/mcfg_sw_Elisa-VoLTE.mbn:vendor/firmware/mbn_ota/mcfg_sw_NoCDMA/mcfg_sw_Elisa-VoLTE.mbn|bd573abb3832bd3a9f4682723624b6722beba451
+etc/firmware/mbn_ota/mcfg_sw_NoCDMA/mcfg_sw_H3G-Commercial.mbn:vendor/firmware/mbn_ota/mcfg_sw_NoCDMA/mcfg_sw_H3G-Commercial.mbn|85bb15611d11c4b89c07270aed73d5e3f44dfff9
+etc/firmware/mbn_ota/mcfg_sw_NoCDMA/mcfg_sw_H3GDK-Commercial.mbn:vendor/firmware/mbn_ota/mcfg_sw_NoCDMA/mcfg_sw_H3GDK-Commercial.mbn|732818feba192b874c2f3b8d5fbf0bf45d30effa
+etc/firmware/mbn_ota/mcfg_sw_NoCDMA/mcfg_sw_Idea-Commercial.mbn:vendor/firmware/mbn_ota/mcfg_sw_NoCDMA/mcfg_sw_Idea-Commercial.mbn|2a9868110c684e95149c348c8414c8f708e4b4a2
+etc/firmware/mbn_ota/mcfg_sw_NoCDMA/mcfg_sw_MTNL_BSNL.mbn:vendor/firmware/mbn_ota/mcfg_sw_NoCDMA/mcfg_sw_MTNL_BSNL.mbn|7447d63f256352ff73254b71c141feb25068757e
+etc/firmware/mbn_ota/mcfg_sw_NoCDMA/mcfg_sw_OEM_NoCDMA-Commercial.mbn:vendor/firmware/mbn_ota/mcfg_sw_NoCDMA/mcfg_sw_OEM_NoCDMA-Commercial.mbn|8dd36895a976afe6e07f46c53091214193a74bc1
+etc/firmware/mbn_ota/mcfg_sw_NoCDMA/mcfg_sw_OEM_Test-VoLTE.mbn:vendor/firmware/mbn_ota/mcfg_sw_NoCDMA/mcfg_sw_OEM_Test-VoLTE.mbn|e53a5cbafa56d12fd40e09aeb59f8a0b80413451
+etc/firmware/mbn_ota/mcfg_sw_NoCDMA/mcfg_sw_Reliance-Commercial.mbn:vendor/firmware/mbn_ota/mcfg_sw_NoCDMA/mcfg_sw_Reliance-Commercial.mbn|7c43c4bea49bba6de3711bac35a8cfcd60de3277
+etc/firmware/mbn_ota/mcfg_sw_NoCDMA/mcfg_sw_UK-VoLTE.mbn:vendor/firmware/mbn_ota/mcfg_sw_NoCDMA/mcfg_sw_UK-VoLTE.mbn|f05e92f80cf98dd74ff6d0052811b7bf9af27247
+etc/firmware/mbn_ota/mcfg_sw_NoCDMA/mcfg_sw_Vodafone-Commercial.mbn:vendor/firmware/mbn_ota/mcfg_sw_NoCDMA/mcfg_sw_Vodafone-Commercial.mbn|391db2107975352d4534ed8bda37f70c2531372e
+etc/firmware/mbn_ota/mcfg_sw_NoCDMA/mcfg_sw_YTL-Commercial.mbn:vendor/firmware/mbn_ota/mcfg_sw_NoCDMA/mcfg_sw_YTL-Commercial.mbn|9a8f6f28c0fa6c3d0b0ae0dbd572e108b261de7c
+etc/firmware/mbn_ota/mcfg_sw/mbn_ota.txt:vendor/firmware/mbn_ota/mcfg_sw/mbn_ota.txt|5bb0f239aeaeaeb51bb43f89c66ba310415be6d2
+etc/firmware/mbn_ota/mcfg_sw/mcfg_sw_ATT-VoLTE.mbn:vendor/firmware/mbn_ota/mcfg_sw/mcfg_sw_ATT-VoLTE.mbn|8fdf5f07774d86714505d1f5bb975fb8d80c1122
+etc/firmware/mbn_ota/mcfg_sw/mcfg_sw_CMCC_Volte_OpenMkt-Commercial.mbn:vendor/firmware/mbn_ota/mcfg_sw/mcfg_sw_CMCC_Volte_OpenMkt-Commercial.mbn|63e04660f760d295b5a1dbf57bef6c36adec384e
+etc/firmware/mbn_ota/mcfg_sw/mcfg_sw_CT_OpenMkt-Commercial.mbn:vendor/firmware/mbn_ota/mcfg_sw/mcfg_sw_CT_OpenMkt-Commercial.mbn|c23bac4d9bf6723da2f70658eaab6faf5a0b3a15
+etc/firmware/mbn_ota/mcfg_sw/mcfg_sw_CU_OpenMkt-Commercial.mbn:vendor/firmware/mbn_ota/mcfg_sw/mcfg_sw_CU_OpenMkt-Commercial.mbn|a41b37381ef55ee52750f86e0453d23d9025cb60
+etc/firmware/mbn_ota/mcfg_sw/mcfg_sw_OEM_CDMA-Commercial.mbn:vendor/firmware/mbn_ota/mcfg_sw/mcfg_sw_OEM_CDMA-Commercial.mbn|b76a9fdc1c6d3e026714f443d5ee7fc6f3b05fb2
+etc/firmware/mbn_ota/mcfg_sw/mcfg_sw_OEM_Test-VoLTE.mbn:vendor/firmware/mbn_ota/mcfg_sw/mcfg_sw_OEM_Test-VoLTE.mbn|e53a5cbafa56d12fd40e09aeb59f8a0b80413451
+etc/firmware/mbn_ota/mcfg_sw/mcfg_sw_TMO-Commercial.mbn:vendor/firmware/mbn_ota/mcfg_sw/mcfg_sw_TMO-Commercial.mbn|38c59d0877542004f8e6dc12a7d9660311e66df2
 
 # Sensors - from OxygenOS
 vendor/bin/sensors.qti|34b67b318750daa1170730f4ffc0a9b46ee1777b
@@ -981,10 +981,10 @@ vendor/bin/time_daemon
 vendor/lib64/libtime_genoff.so
 
 # TP firmware - from OxygenOS
-etc/firmware/tp/fw_synaptics_15801.img|459fc2311ea7a784be1056b20444f521a05c9f84
-etc/firmware/tp/fw_synaptics_15801b.img|5652646a52449fc2e5f988bea57de8656897d2f6
-etc/firmware/tp/fw_synaptics_15811.img|ff51788555935b3ac17916a5a8a7e46130ee5702
-etc/firmware/tp/fw_synaptics_touchkey.img|f60307a5e859c50f273514c321d029d99367f731
+etc/firmware/tp/fw_synaptics_15801.img:vendor/firmware/tp/fw_synaptics_15801.img|459fc2311ea7a784be1056b20444f521a05c9f84
+etc/firmware/tp/fw_synaptics_15801b.img:vendor/firmware/tp/fw_synaptics_15801b.img|5652646a52449fc2e5f988bea57de8656897d2f6
+etc/firmware/tp/fw_synaptics_15811.img:vendor/firmware/tp/fw_synaptics_15811.img|ff51788555935b3ac17916a5a8a7e46130ee5702
+etc/firmware/tp/fw_synaptics_touchkey.img:vendor/firmware/tp/fw_synaptics_touchkey.img|f60307a5e859c50f273514c321d029d99367f731
 
 # Wifi - from OxygenOS
 vendor/bin/cnss-daemon|608267c5ff979a1b102c46547be37ce1d2631324
