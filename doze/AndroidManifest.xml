@@ -46,14 +46,39 @@
         </service>
 
         <activity
+            android:name=".DeviceSettingsActivity"
+            android:label="@string/device_settings_app_name"
+            android:theme="@style/Theme.Main"
+            android:exported="true">
+        </activity>
+
+        <activity-alias
             android:name=".DozeSettingsActivity"
+            android:targetActivity=".DeviceSettingsActivity"
             android:label="@string/ambient_display_title"
-            android:theme="@style/Theme.Main">
+            android:theme="@style/Theme.Main"
+            android:exported="true">
             <intent-filter>
                 <action android:name="org.lineageos.settings.device.DOZE_SETTINGS" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-        </activity>
+        </activity-alias>
+
+        <activity-alias
+            android:name=".DisplaySettingsActivity"
+            android:targetActivity=".DeviceSettingsActivity"
+            android:label="@string/device_settings_app_name"
+            android:theme="@style/Theme.Main"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.android.settings.action.EXTRA_SETTINGS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.category"
+                    android:value="com.android.settings.category.ia.display" />
+            <meta-data android:name="com.android.settings.summary"
+                    android:resource="@string/summary_empty"/>
+        </activity-alias>
 
     </application>
 </manifest>

@@ -28,6 +28,7 @@ import android.text.TextUtils;
 import android.util.Log;
 
 import com.android.internal.hardware.AmbientDisplayConfiguration;
+import com.evervolv.internal.util.FileUtils;
 
 import java.util.List;
 
@@ -45,6 +46,10 @@ public final class Utils {
     protected static final String GESTURE_PICK_UP_KEY = "gesture_pick_up";
     protected static final String GESTURE_HAND_WAVE_KEY = "gesture_hand_wave";
     protected static final String GESTURE_POCKET_KEY = "gesture_pocket";
+
+    protected static final String DISPLAY_PATH = "/sys/devices/virtual/graphics/fb0/";
+    protected static final String DISPLAY_BRIGHTNESS_KEY = "high_brightness";
+    protected static final String DISPLAY_COLOR_MODE_KEY = "color_mode";
 
     protected static void startService(Context context) {
         if (DEBUG) Log.d(TAG, "Starting service");
@@ -133,5 +138,49 @@ public final class Utils {
             }
         }
         return null;
+    }
+
+    protected static boolean getHightBrightnessMode(Context context) {
+        return FileUtils.readOneLine(DISPLAY_PATH + "hbm").equals("1");
+    }
+
+    protected static void setHightBrightnessMode(Context context, boolean enabled) {
+        if (FileUtils.isFileWritable(DISPLAY_PATH + "hbm")) {
+            FileUtils.writeLine(DISPLAY_PATH + "hbm", enabled ? "1" : "0");
+        }
+    }
+
+    protected static String getDisplayMode(Context context) {
+        String[] validColorModes = context.getResources().getStringArray(
+                R.array.color_mode_entry_values);
+        for (String key : validColorModes) {
+            String mode = FileUtils.readOneLine(DISPLAY_PATH + key);
+            if (mode.equals("1")) {
+                return key;
+            }
+        }
+        return null;
+    }
+
+    protected static void setDisplayMode(Context context, String mode) {
+        String[] validColorModes = context.getResources().getStringArray(
+                R.array.color_mode_entry_values);
+        for (String key : validColorModes) {
+            if (FileUtils.isFileWritable(DISPLAY_PATH + key)) {
+                FileUtils.writeLine(DISPLAY_PATH + key, mode.equals(key) ? "1" : "0");
+            }
+        }
+    }
+
+    protected static void restoreSettings(Context context) {
+        boolean brightnessMode = PreferenceManager.getDefaultSharedPreferences(context)
+                .getBoolean(DISPLAY_BRIGHTNESS_KEY, false);
+        setHightBrightnessMode(context, brightnessMode);
+
+        String colorMode = PreferenceManager.getDefaultSharedPreferences(context)
+                .getString(DISPLAY_COLOR_MODE_KEY, "off");
+        setDisplayMode(context, colorMode);
+
+        checkDozeService(context);
     }
 }

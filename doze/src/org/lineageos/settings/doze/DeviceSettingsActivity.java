@@ -17,10 +17,12 @@
 
 package org.lineageos.settings.doze;
 
+import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
 
-public class DozeSettingsActivity extends PreferenceActivity {
+public class DeviceSettingsActivity extends PreferenceActivity {
 
     private static final String TAG_DOZE = "doze";
 
@@ -28,7 +30,17 @@ public class DozeSettingsActivity extends PreferenceActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        getFragmentManager().beginTransaction().replace(android.R.id.content,
-                new DozeSettingsFragment(), TAG_DOZE).commit();
+        if (getFragmentManager().findFragmentByTag(TAG_DOZE) == null) {
+            final String action = getIntent().getAction();
+            final Fragment fragment;
+            if ("org.lineageos.settings.device.DOZE_SETTINGS".equals(action)) {
+                fragment = new DozeSettingsFragment();
+            } else {
+                fragment = new DisplaySettingsFragment();
+            }
+
+            getFragmentManager().beginTransaction().replace(android.R.id.content,
+                    fragment, TAG_DOZE).commit();
+        }
     }
 }
