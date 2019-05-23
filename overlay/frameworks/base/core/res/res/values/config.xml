@@ -413,4 +413,6 @@
     <!-- Whether the display blanks itself when going from a doze to a non-doze state -->
     <bool name="config_displayBlanksAfterDoze">true</bool>
 
+   <!-- Enable WPA3 support -->
+   <bool translatable="false" name="config_wifi_wpa3_supported">false</bool>
 </resources>
