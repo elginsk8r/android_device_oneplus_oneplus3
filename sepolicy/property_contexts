@@ -14,3 +14,7 @@ persist.net.doxlat                      u:object_r:vendor_xlat_prop:s0
 
 # TEE
 sys.listeners.registered                u:object_r:vendor_tee_listener_prop:s0
+
+# Thermal
+sys.qcom.thermalcfg                     u:object_r:thermal_prop:s0
+ctl.thermal-engine                      u:object_r:thermal_prop:s0
