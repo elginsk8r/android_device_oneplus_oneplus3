@@ -23,10 +23,10 @@ import android.hardware.display.AmbientDisplayConfiguration;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.os.UserHandle;
-import androidx.preference.PreferenceManager;
 import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.Log;
+import androidx.preference.PreferenceManager;
 
 import java.util.List;
 
