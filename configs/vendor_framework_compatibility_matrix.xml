@@ -635,14 +635,6 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             <instance>default</instance>
         </interface>
     </hal>
-    <hal optional="true" format="hidl">
-        <name>vendor.qti.hardware.display.mapperextensions</name>
-        <version>1.0</version>
-        <interface>
-            <name>IQtiMapperExtensions</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
     <hal format="hidl" optional="true">
         <name>vendor.qti.hardware.display.composer</name>
         <version>2.0</version>
