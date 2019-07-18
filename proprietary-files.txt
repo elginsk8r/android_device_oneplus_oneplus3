@@ -959,7 +959,10 @@ etc/firmware/tp/fw_synaptics_15811.img
 etc/firmware/tp/fw_synaptics_touchkey.img
 
 # Wifi
+lib64/vendor.oneplus.hardware.wifi@1.0.so
+vendor/bin/hw/vendor.oneplus.hardware.wifi@1.0-service
 vendor/bin/cnss-daemon
+vendor/etc/init/vendor.oneplus.hardware.wifi@1.0-service.rc
 
 # WiFi Display
 bin/wfdservice
