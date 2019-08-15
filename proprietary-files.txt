@@ -512,7 +512,7 @@ vendor/lib64/libQSEEComAPI.so
 vendor/lib64/librpmb.so
 vendor/lib64/libsecureui.so
 vendor/lib64/libsecureui_svcsock.so
-vendor/lib64/libspl.so
+vendor/lib64/libspl.so|5443114db96c1a534e6a338dec895af26dd9d863
 vendor/lib64/libssd.so
 vendor/lib64/libStDrvInt.so
 vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so
