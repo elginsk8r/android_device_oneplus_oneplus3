@@ -226,6 +226,7 @@ TARGET_LD_SHIM_LIBS := \
 TARGET_MOUNT_POINTS_SYMLINKS ?= false
 ifneq ($(TARGET_MOUNT_POINTS_SYMLINKS),true)
 BOARD_ROOT_EXTRA_SYMLINKS := \
+    /mnt/vendor/persist:/persist \
     /vendor/dsp:/dsp \
     /vendor/firmware_mnt:/firmware \
     /vendor/bt_firmware:/bt_firmware
