@@ -22,6 +22,7 @@
 #
 
 # Build
+BUILD_BROKEN_TREBLE_SYSPROP_NEVERALLOW := true
 BUILD_BROKEN_USES_BUILD_COPY_HEADERS := true
 
 PLATFORM_PATH := device/oneplus/oneplus3
