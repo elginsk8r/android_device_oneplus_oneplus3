@@ -773,4 +773,14 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             <instance>embmsslServer0</instance>
         </interface>
     </hal>
+    <!-- SlmAdapter HAL service -->
+    <hal format="hidl" optional="true">
+        <name>vendor.qti.hardware.slmadapter</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>ISlmAdapter</name>
+            <instance>SlmAdapter</instance>
+        </interface>
+    </hal>
 </compatibility-matrix>
