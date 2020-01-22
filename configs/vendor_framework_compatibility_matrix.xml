@@ -1,4 +1,4 @@
-<!-- Copyright (c) 2018-2019, The Linux Foundation. All rights reserved.
+<!-- Copyright (c) 2018-2020, The Linux Foundation. All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are
@@ -656,7 +656,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </hal>
     <hal format="hidl" optional="true">
         <name>vendor.qti.hardware.display.composer</name>
-        <version>2.0</version>
+        <version>2.0-1</version>
         <interface>
             <name>IQtiComposer</name>
             <instance>default</instance>
