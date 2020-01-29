@@ -21,6 +21,9 @@
 # definition file).
 #
 
+# Build
+BUILD_BROKEN_USES_BUILD_COPY_HEADERS := true
+
 PLATFORM_PATH := device/oneplus/oneplus3
 
 TARGET_SPECIFIC_HEADER_PATH := $(PLATFORM_PATH)/include
