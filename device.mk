@@ -382,6 +382,7 @@ PRODUCT_PACKAGES += \
 
 # NFC
 PRODUCT_PACKAGES += \
+    android.hardware.secure_element@1.0 \
     NQNfcNci \
     libnqnfc-nci \
     libnqnfc_nci_jni \
@@ -495,9 +496,6 @@ PRODUCT_PACKAGES += \
 
 # RIL
 PRODUCT_PACKAGES += \
-    android.hardware.radio@1.4 \
-    android.hardware.radio.config@1.0 \
-    android.hardware.secure_element@1.0 \
     librmnetctl \
     libxml2
 
