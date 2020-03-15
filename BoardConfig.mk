@@ -30,6 +30,10 @@ TARGET_SPECIFIC_HEADER_PATH := $(PLATFORM_PATH)/include
 
 BOARD_VENDOR := oneplus
 
+ifeq ($(filter oneplus3_vendor,$(TARGET_DEVICE)),)
+ENABLE_VENDOR_IMAGE := true
+endif
+
 # Assertions
 TARGET_BOARD_INFO_FILE ?= $(PLATFORM_PATH)/board-info.txt
 TARGET_OTA_ASSERT_DEVICE := OnePlus3,oneplus3,OnePlus3T,oneplus3t
@@ -68,9 +72,10 @@ BOARD_RAMDISK_OFFSET     := 0x02200000
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 TARGET_KERNEL_SOURCE := kernel/oneplus/msm8996
 TARGET_KERNEL_CLANG_COMPILE := true
+ifneq ($(ENABLE_VENDOR_IMAGE),true)
 TARGET_KERNEL_CONFIG := evervolv_oneplus3_defconfig
-ifeq ($(ENABLE_VENDOR_IMAGE),true)
-TARGET_KERNEL_VARIANT_CONFIG := vendor_defconfig
+else
+TARGET_KERNEL_CONFIG := evervolv_oneplus3-vendor_defconfig
 endif
 
 # QCOM hardware
