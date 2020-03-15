@@ -1,5 +1,5 @@
-#
-# Copyright 2012 The Android Open Source Project
+# Copyright (C) 2016 The CyanogenMod Project
+# Copyright (C) 2017-2018 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,14 +12,8 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-#
 
-PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/aosp_oneplus3.mk \
-    $(LOCAL_DIR)/ev_oneplus3.mk \
-    $(LOCAL_DIR)/ev_oneplus3_vndk.mk
+# Inherit from oneplus3 device
+$(call inherit-product, device/oneplus/oneplus3/ev_oneplus3.mk)
 
-COMMON_LUNCH_CHOICES := \
-    aosp_oneplus3-userdebug \
-    ev_oneplus3-userdebug \
-    ev_oneplus3_vndk-userdebug 
+PRODUCT_NAME := ev_oneplus3_vndk
