@@ -63,11 +63,22 @@ function blob_fixup() {
     etc/permissions/qti_libpermissions.xml)
         sed -i "s|name=\"android.hidl.manager-V1.0-java\"|name=\"android.hidl.manager@1.0-java\"|g" "${2}"
     ;;
+    vendor/*/hw/camera.msm8996.so)
+        patchelf --replace-needed "libcamera_client.so" "android.hardware.camera.common@1.0-helper.so" "${2}"
+        patchelf --remove-needed "libgui.so" "${2}"
+    ;;
     vendor/*/hw/vulkan.msm8996.so)
         patchelf --set-soname "vulkan.msm8996.so" "${2}"
     ;;
+    vendor/lib/libFNVfbEngineHAL.so)
+        patchelf --remove-needed "libandroid.so" "${2}"
+    ;;
     vendor/lib/libmmcamera2_sensor_modules.so)
         sed -i "s|/system/etc/camera/|/vendor/etc/camera/|g" "${2}"
+    ;;
+    vendor/lib/libmmcamera2_stats_modules.so)
+        patchelf --remove-needed "libandroid.so" "${2}"
+        patchelf --remove-needed "libgui.so" "${2}"
     ;;
     vendor/lib/libopcamera_native_modules.so)
         sed -i "s|/system/lib/libmpbase.so|/vendor/lib/libmpbase.so|g" "${2}"

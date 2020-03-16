@@ -27,3 +27,9 @@ cc_library_shared {
     ],
     shared_libs: ["libcutils"],
 }
+
+cc_library_shared {
+    name: "android.hardware.camera.common@1.0-helper",
+    vendor: "true",
+    static_libs: ["android.hardware.camera.common@1.0-helper"],
+}
