@@ -27,3 +27,13 @@ cc_library_shared {
     ],
     shared_libs: ["libcutils"],
 }
+
+cc_library_shared {
+    name: "libopcamera_shim",
+    vendor: true,
+    srcs: [
+        "strdup16to8.cpp",
+        "strdup8to16.cpp"
+    ],
+    static_libs: ["android.hardware.camera.common@1.0-helper"],
+}

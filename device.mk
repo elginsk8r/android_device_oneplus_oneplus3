@@ -215,6 +215,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Camera
 PRODUCT_PACKAGES += \
     Snap \
+    android.hardware.camera.common@1.0-helper \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service
 
@@ -516,6 +517,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Shims
 PRODUCT_PACKAGES += \
     libcutils_shim \
+    libopcamera_shim \
     libui_shim
 
 # Telephony
