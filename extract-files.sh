@@ -58,14 +58,32 @@ if [ -z "$SRC" ]; then
     SRC=adb
 fi
 
+function blob_fixup() {
+    case "${1}" in
+    vendor/lib/hw/gatekeeper.msm8996.so)
+        patchelf --set-soname "gatekeeper.msm8996.so" "${2}"
+        ;;
+    vendor/lib64/hw/gatekeeper.msm8996.so)
+        patchelf --set-soname "gatekeeper.msm8996.so" "${2}"
+        ;;
+    vendor/lib/hw/keystore.msm8996.so)
+        patchelf --set-soname "keystore.msm8996.so" "${2}"
+        ;;
+    vendor/lib64/hw/keystore.msm8996.so)
+        patchelf --set-soname "keystore.msm8996.so" "${2}"
+        ;;
+    vendor/lib/hw/vulkan.msm8996.so)
+        patchelf --set-soname "vulkan.msm8996.so" "${2}"
+        ;;
+    vendor/lib64/hw/vulkan.msm8996.so)
+        patchelf --set-soname "vulkan.msm8996.so" "${2}"
+        ;;
+    esac
+}
+
 # Initialize the helper
-setup_vendor "$DEVICE" "$VENDOR" "$LINEAGE_ROOT" false "$CLEAN_VENDOR"
+setup_vendor "$DEVICE" "$VENDOR" "$LINEAGE_ROOT" true "$CLEAN_VENDOR"
 
 extract "$MY_DIR"/proprietary-files.txt "$SRC" "$SECTION"
 
 "$MY_DIR"/setup-makefiles.sh
-
-DEVICE_BLOB_ROOT="$LINEAGE_ROOT"/vendor/"$VENDOR"/"$DEVICE"/proprietary
-
-patchelf --set-soname "vulkan.msm8996.so" "$DEVICE_BLOB_ROOT"/vendor/lib/hw/vulkan.msm8996.so
-patchelf --set-soname "vulkan.msm8996.so" "$DEVICE_BLOB_ROOT"/vendor/lib64/hw/vulkan.msm8996.so

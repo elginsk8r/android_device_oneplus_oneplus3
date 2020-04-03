@@ -232,6 +232,7 @@ PRODUCT_PACKAGES += \
     memtrack.msm8996 \
     libdisplayconfig \
     liboverlay \
+    libqdMetaData \
     libqdMetaData.system \
     libtinyxml \
     android.hardware.graphics.allocator@2.0-impl \
@@ -348,6 +349,9 @@ PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service.oneplus3
 
 # Media
+PRODUCT_PACKAGES += \
+    libmediaplayerservice
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
     $(LOCAL_PATH)/configs/media_codecs_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance.xml \
@@ -410,6 +414,11 @@ PRODUCT_PACKAGES += \
     libOmxVdec \
     libOmxVenc \
     libstagefrighthw
+
+# Perf
+PRODUCT_BOOT_JARS += \
+    QPerformance \
+    UxPerformance
 
 # Power
 PRODUCT_PACKAGES += \
@@ -476,7 +485,7 @@ PRODUCT_PACKAGES += \
 # RIL
 PRODUCT_PACKAGES += \
     android.hardware.radio@1.4 \
-    android.hardware.radio.config@1.0 \
+    android.hardware.radio.config@1.2 \
     android.hardware.secure_element@1.0 \
     librmnetctl \
     libxml2 \
@@ -578,10 +587,15 @@ PRODUCT_COPY_FILES += \
 # WiFi Display
 PRODUCT_PACKAGES += \
     libaacwrapper \
-    libnl
+    libnl \
+    libwfdaac
 
 PRODUCT_BOOT_JARS += \
     WfdCommon
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.debug.wfd.enable=1 \
+    persist.sys.wfd.virtual=0
 
 # Inherit from common
 $(call inherit-product, device/oneplus/common/common.mk)
