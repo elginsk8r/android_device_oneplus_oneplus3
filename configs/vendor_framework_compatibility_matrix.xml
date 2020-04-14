@@ -767,7 +767,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <!-- eMBMS HAL service -->
     <hal format="hidl" optional="true">
         <name>vendor.qti.hardware.embmssl</name>
-        <version>1.0</version>
+        <version>1.0-1</version>
         <interface>
             <name>IEmbms</name>
             <instance>embmsslServer0</instance>
