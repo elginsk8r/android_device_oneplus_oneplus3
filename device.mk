@@ -577,6 +577,7 @@ PRODUCT_PACKAGES += \
     libQWiFiSoftApCfg \
     libwpa_client \
     hostapd \
+    TetheringConfigOverlay \
     wificond \
     WifiOverlay \
     wpa_supplicant \
