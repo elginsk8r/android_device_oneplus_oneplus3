@@ -1,6 +1,6 @@
 /*
    Copyright (c) 2016, The CyanogenMod Project
-             (c) 2017-2019, The LineageOS Project
+             (c) 2017-2021, The LineageOS Project
 
    Redistribution and use in source and binary forms, with or without
    modification, are permitted provided that the following conditions are
@@ -35,11 +35,17 @@
 #define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
 #include <sys/_system_properties.h>
 
-#include "property_service.h"
 #include "vendor_init.h"
 
+namespace android {
+namespace init {
+uint32_t InitPropertySet(const std::string& name, const std::string& value);
+}  // namespace init
+}  // namespace android
+
+namespace {
 constexpr const char* RO_PROP_SOURCES[] = {
-        nullptr, "product.", "product_services.", "odm.", "vendor.", "system.", "bootimage.",
+        nullptr, "product.", "odm.", "vendor.", "system_ext.", "system.", "bootimage.",
 };
 
 constexpr const char* BUILD_DESCRIPTION = "OnePlus3-user 8.0.0 OPR1.170623.032 31 release-keys";
@@ -81,14 +87,12 @@ void load_props(const char* model, bool is_3t) {
     ro_prop_override(nullptr, "description", BUILD_DESCRIPTION, false);
     ro_prop_override(nullptr, "product", "OnePlus3", false);
 
-    // ro.build.fingerprint property has not been set
-    property_override("ro.build.fingerprint", BUILD_FINGERPRINT[is_3t ? 1 : 0]);
-
     // override power profile if op3t
     if (is_3t) {
-        property_override("ro.power_profile.override", "power_profile_3t");
+        android::init::InitPropertySet("ro.power_profile.override", "power_profile_3t");
     }
 }
+}  // anonymous namespace
 
 void vendor_load_properties() {
     int rf_version = stoi(android::base::GetProperty("ro.boot.rf_version", ""));
