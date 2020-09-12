@@ -976,7 +976,7 @@ vendor/lib64/libthermalioctl.so|aa2a0abd8fb9792024efd93f648c129b6a22619e
 
 # Time services
 bin/move_time_data.sh
--vendor/app/TimeService/TimeService.apk;:timeservice_app_cert-legacy-um
+-vendor/app/TimeService/TimeService.apk
 vendor/bin/time_daemon
 vendor/lib64/libtime_genoff.so
 
