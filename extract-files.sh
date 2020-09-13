@@ -63,6 +63,9 @@ function blob_fixup() {
     etc/permissions/qti_libpermissions.xml)
         sed -i "s|name=\"android.hidl.manager-V1.0-java\"|name=\"android.hidl.manager@1.0-java\"|g" "${2}"
     ;;
+    product/lib64/libdpmframework.so)
+        patchelf --replace-needed "libcutils.so" "libcutils_shim.so" "${2}"
+    ;;
     vendor/*/hw/vulkan.msm8996.so)
         patchelf --set-soname "vulkan.msm8996.so" "${2}"
     ;;

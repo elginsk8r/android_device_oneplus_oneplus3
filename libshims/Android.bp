@@ -18,3 +18,12 @@ cc_library_shared {
     srcs: ["GraphicBuffer.cpp"],
     shared_libs: ["libui"],
 }
+
+cc_library_shared {
+    name: "libcutils_shim",
+    srcs: [
+        "strdup16to8.cpp",
+        "strdup8to16.cpp"
+    ],
+    shared_libs: ["libcutils"],
+}
