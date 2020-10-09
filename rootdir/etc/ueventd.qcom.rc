@@ -415,6 +415,8 @@ firmware_directories /vendor/firmware_mnt/image/
 /sys/class/kgsl/kgsl-3d0    force_clk_on             0664    root  system
 /sys/class/kgsl/kgsl-3d0    bus_split                0664    root  system
 
+/sys/devices/platform/soc/ae00000.qcom,mdss_mdp power/control 0664 system graphics
+
 #asm330 sensor
 #common sensors files
 /sys/devices/platform/soc/*.i2c/i2c-*/*-*/iio:device*   buffer/enable                   0664    system  system
