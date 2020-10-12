@@ -58,9 +58,6 @@ vendor/lib/libadiertac.so|e5231cdfc829b673702c4661751854bc44f7c72b
 vendor/lib/libadm.so|355bbe01f7117f3e16435224ce0c75b111a0f5b8
 vendor/lib/libaudcal.so|4508cee149c22b8e35e8f4423f38a8e8a9b5d130
 vendor/lib/libqtigef.so|9cd393596185026a68959b75cc7ac3b9342326a5
-vendor/lib/soundfx/libqcbassboost.so|572d03f4566f3e08aeac948b9ef92817af243a39
-vendor/lib/soundfx/libqcreverb.so|a9ae6d150aae44358783e6b0c4cfb0b3fec27f6b
-vendor/lib/soundfx/libqcvirt.so|4181edde0747774830930f66f20a756fec95118d
 
 # Audio ACDB - from OxygenOS
 vendor/etc/acdbdata/MTP/MTP_Bluetooth_cal.acdb|d6dc0a73dcecf4b9ea2d522c4291e5f1a2aa9a56
