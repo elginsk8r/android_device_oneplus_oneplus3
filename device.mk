@@ -470,6 +470,9 @@ PRODUCT_PACKAGES += \
     init.oneplus3.rc \
     ueventd.qcom.rc
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/rootdir/etc/wigignpt.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/wigignpt.rc
+
 # RCS
 PRODUCT_PACKAGES += \
     com.android.ims.rcsmanager \
