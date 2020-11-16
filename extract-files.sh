@@ -63,11 +63,20 @@ function blob_fixup() {
     etc/permissions/qti_libpermissions.xml)
         sed -i "s|name=\"android.hidl.manager-V1.0-java\"|name=\"android.hidl.manager@1.0-java\"|g" "${2}"
     ;;
+    lib64/lib-imsvideocodec.so)
+        patchelf --replace-needed "libui.so" "libui_shim.so" "${2}"
+    ;;
     vendor/*/hw/vulkan.msm8996.so)
         patchelf --set-soname "vulkan.msm8996.so" "${2}"
     ;;
     vendor/lib/libmmcamera2_sensor_modules.so)
         sed -i "s|/system/etc/camera/|/vendor/etc/camera/|g" "${2}"
+    ;;
+    vendor/lib/libmms_hal_vstab.so)
+        patchelf --replace-needed "libui.so" "libui_shim.so" "${2}"
+    ;;
+    vendor/lib/libmms_warper_vstab.so)
+        patchelf --replace-needed "libui.so" "libui_shim.so" "${2}"
     ;;
     vendor/lib/libopcamera_native_modules.so)
         sed -i "s|/system/lib/libmpbase.so|/vendor/lib/libmpbase.so|g" "${2}"
@@ -87,6 +96,7 @@ function blob_fixup() {
     vendor/lib64/libwvhidl.so)
         patchelf --replace-needed "libprotobuf-cpp-lite.so" "libprotobuf-cpp-lite-v28.so" "${2}"
     ;;
+
     esac
 }
 

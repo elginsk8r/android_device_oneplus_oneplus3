@@ -216,7 +216,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES += \
     Snap \
     android.hardware.camera.provider@2.4-impl \
-    android.hardware.camera.provider@2.4-service
+    android.hardware.camera.provider@2.4-service \
+    libui_shim.vendor:32
 
 # Charger
 PRODUCT_PRODUCT_PROPERTIES += \
@@ -327,12 +328,6 @@ PRODUCT_PACKAGES += \
     libhidltransport.vendor \
     libhwbinder \
     libhwbinder.vendor
-
-# IMS
-PRODUCT_PACKAGES += \
-    com.android.ims.rcsmanager \
-    RcsService \
-    PresencePolling
 
 # IPv6
 PRODUCT_PACKAGES += \
@@ -513,14 +508,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.qti.sensors.sta_detect=false \
     ro.qti.sensors.mot_detect=false
 
-# Shims
-PRODUCT_PACKAGES += \
-    libui_shim
-
 # Telephony
 PRODUCT_PACKAGES += \
     ims-ext-common \
     ims_ext_common.xml \
+    libui_shim:64 \
     telephony-ext \
     qti-telephony-hidl-wrapper \
     qti_telephony_hidl_wrapper.xml \
