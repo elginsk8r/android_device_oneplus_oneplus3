@@ -842,7 +842,6 @@ vendor/radio/qcril_database/upgrade/3_version_update_wps_config.sql|0571aacaf9fc
 
 # Radio
 product/etc/permissions/telephony_product_privapp-permissions-qti.xml
-product/framework/qti-telephony-common.jar
 vendor/etc/init/dataadpl.rc
 vendor/etc/init/dataqti.rc
 vendor/etc/init/port-bridge.rc
