@@ -150,8 +150,6 @@ ifeq ($(HOST_OS),linux)
     endif
   endif
 endif
-DEXPREOPT_GENERATE_APEX_IMAGE := true
-TARGET_FLATTEN_APEX := true
 
 # Filesystem
 TARGET_FS_CONFIG_GEN := $(PLATFORM_PATH)/config.fs
