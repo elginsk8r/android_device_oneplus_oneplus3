@@ -219,7 +219,7 @@ BOARD_VENDOR_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy
 TARGET_LD_SHIM_LIBS := \
     /system/lib/libui.so|libui_shim.so \
     /system/lib64/libui.so|libui_shim.so \
-    /system/product/lib64/libdpmframework.so|libcutils_shim.so
+    /system_ext/lib64/libdpmframework.so|libcutils_shim.so
 
 # Symlinks
 TARGET_MOUNT_POINTS_SYMLINKS := false

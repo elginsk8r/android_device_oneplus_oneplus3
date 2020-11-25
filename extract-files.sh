@@ -60,6 +60,16 @@ fi
 
 function blob_fixup() {
     case "${1}" in
+    system_ext/etc/init/dpmd.rc)
+        sed -i "s/\/system\/product\/bin\//\/system\/system_ext\/bin\//g" "${2}"
+    ;;
+     system_ext/etc/permissions/*.xml)
+        sed -i "s/\/system\/product\/framework\//\/system\/system_ext\/framework\//g" "${2}"
+        sed -i "s/\/system\/framework\//\/system\/system_ext\/framework\//g" "${2}"
+    ;;
+    system_ext/etc/permissions/qti_libpermissions.xml)
+        sed -i "s/name=\"android.hidl.manager-V1.0-java/name=\"android.hidl.manager@1.0-java/g" "${2}"
+    ;;
     vendor/lib64/libwvhidl.so)
         patchelf --replace-needed "libprotobuf-cpp-lite.so" "libprotobuf-cpp-lite-v28.so" "${2}"
     ;;

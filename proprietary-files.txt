@@ -437,11 +437,11 @@ vendor/lib/libmmcamera_isp_sub_module.so|c020981146e57d6dd84025bb4ec70efce256b29
 etc/cne/Nexus/ATT/ATT_profiles.xml
 etc/cne/Nexus/ROW/ROW_profiles.xml
 etc/cne/Nexus/VZW/VZW_profiles.xml
-product/lib64/com.quicinc.cne.api@1.0.so
-product/lib64/com.quicinc.cne.api@1.1.so
-product/lib64/com.quicinc.cne.constants@1.0.so
-product/lib64/com.quicinc.cne.constants@2.0.so
-product/lib64/com.quicinc.cne.constants@2.1.so
+product/lib64/com.quicinc.cne.api@1.0.so:system_ext/lib64/com.quicinc.cne.api@1.0.so
+product/lib64/com.quicinc.cne.api@1.1.so:system_ext/lib64/com.quicinc.cne.api@1.1.so
+product/lib64/com.quicinc.cne.constants@1.0.so:system_ext/lib64/com.quicinc.cne.constants@1.0.so
+product/lib64/com.quicinc.cne.constants@2.0.so:system_ext/lib64/com.quicinc.cne.constants@2.0.so
+product/lib64/com.quicinc.cne.constants@2.1.so:system_ext/lib64/com.quicinc.cne.constants@2.1.so
 -vendor/app/CneApp/CneApp.apk
 -vendor/app/IWlanService/IWlanService.apk
 vendor/bin/cnd
@@ -498,19 +498,19 @@ vendor/lib64/vendor.qti.latency@2.0.so
 sbin/dashd:vendor/bin/dashd|77ad483367643e5d7b54d20c907c00fad7083c1a
 
 # DPM
-product/bin/dpmd
-product/etc/dpm/dpm.conf
-product/etc/init/dpmd.rc
-product/etc/permissions/com.qti.dpmframework.xml
-product/etc/permissions/dpmapi.xml
-product/framework/com.qti.dpmframework.jar
-product/framework/dpmapi.jar
-product/lib64/com.qualcomm.qti.dpm.api@1.0.so
-product/lib64/libdpmctmgr.so
-product/lib64/libdpmfdmgr.so
-product/lib64/libdpmframework.so
-product/lib64/libdpmtcm.so
--product/priv-app/dpmserviceapp/dpmserviceapp.apk
+product/bin/dpmd:system_ext/bin/dpmd
+product/etc/dpm/dpm.conf:system_ext/etc/dpm/dpm.conf
+product/etc/init/dpmd.rc:system_ext/etc/init/dpmd.rc
+product/etc/permissions/com.qti.dpmframework.xml:system_ext/etc/permissions/com.qti.dpmframework.xml
+product/etc/permissions/dpmapi.xml:system_ext/etc/permissions/dpmapi.xml
+product/framework/com.qti.dpmframework.jar:system_ext/framework/com.qti.dpmframework.jar
+product/framework/dpmapi.jar:system_ext/framework/dpmapi.jar
+product/lib64/com.qualcomm.qti.dpm.api@1.0.so:system_ext/lib64/com.qualcomm.qti.dpm.api@1.0.so
+product/lib64/libdpmctmgr.so:system_ext/lib64/libdpmctmgr.so
+product/lib64/libdpmfdmgr.so:system_ext/lib64/libdpmfdmgr.so
+product/lib64/libdpmframework.so:system_ext/lib64/libdpmframework.so
+product/lib64/libdpmtcm.so:system_ext/lib64/libdpmtcm.so
+-product/priv-app/dpmserviceapp/dpmserviceapp.apk:system_ext/priv-app/dpmserviceapp/dpmserviceapp.apk
 vendor/bin/dpmQmiMgr
 vendor/etc/init/dpmQmiMgr.rc
 vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so
@@ -740,11 +740,11 @@ vendor/lib64/hw/vendor.qti.hardware.alarm@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.alarm@1.0.so
 
 # QMI - from OxygenOS
-etc/permissions/qti_libpermissions.xml|593bcb72cce68ceb0a70f50bcae7d460114e7c62
-etc/permissions/qti_permissions.xml|e6ff4572352b1a4f91b6b9d7cbb1cad9924410a0
-lib/libdiag_system.so|58180c7532cf1ba9afd81dd18f911afd9966b56c
+etc/permissions/qti_libpermissions.xml:system_ext/etc/permissions/qti_libpermissions.xml|593bcb72cce68ceb0a70f50bcae7d460114e7c62|fd7a5097f8e363c47c5cfaaa8c4f304a873618de
+etc/permissions/qti_permissions.xml:system_ext/etc/permissions/qti_permissions.xml|e6ff4572352b1a4f91b6b9d7cbb1cad9924410a0
+lib/libdiag_system.so:system_ext/lib/libdiag_system.so|58180c7532cf1ba9afd81dd18f911afd9966b56c
 lib/libqmi_cci_system.so|d22ddb3d8e82041c1056da4369461cd4297f4b69
-lib64/libdiag_system.so|49d989fb7a6dd0d35d792a01b789e53a9fb6a3fd
+lib64/libdiag_system.so:system_ext/lib64/libdiag_system.so|49d989fb7a6dd0d35d792a01b789e53a9fb6a3fd
 lib64/libqmi_cci_system.so|a0668b65f00467e862debdbc9ecdb20b18a129e2
 vendor/bin/irsc_util|c0e4608e30b78a89e936dd872328d18ede9cb95b
 vendor/lib/libdiag.so|fff14b63fac4b928db75946922d67de792fbd9d9
@@ -780,20 +780,20 @@ vendor/lib/libqmi_cci.so
 vendor/lib64/libqmi_cci.so
 
 # Radio - from OxygenOS
--app/datastatusnotification/datastatusnotification.apk|5158a24e22d93c449591a7b5a1936e7b431c4b50
--app/embms/embms.apk|97d4217057636f66c057a539088be806bf76499d
--app/QtiTelephonyService/QtiTelephonyService.apk|cdb39f2e0ea9a08826f23c9753e04fc5949b14a7
-etc/permissions/embms.xml|5e1b492874c221a7e1188fc3a5369d32b3e67969
-etc/permissions/lpa.xml|5aed30f29c7fbe91dcf7eef9dddbdf96ac6bcbee
-etc/permissions/qcnvitems.xml|dc0e70cace2317b5169a454cbc2bbf8887c18d55
-etc/permissions/qcrilhook.xml|9fc58a3d54d20ac1d53bab14608815121aefbce5
-etc/permissions/telephonyservice.xml|b297c8a27443570377d78586b00198839ce326bb
-framework/embmslibrary.jar|980832af89ed59120b7362ddb56d3120bb6b2239
-framework/qcnvitems.jar|ed2547dfc05e39a354bf2786b01e737778aa187f
-framework/qcrilhook.jar|3be64d500881910c521a8412d42a08fd1f2fabbe
-framework/QtiTelephonyServicelibrary.jar|55f8760ec49998b90771f4cde4e781f295d226e1
-framework/uimlpalibrary.jar|e1488ee0c37be5cd16b603c65ea4dc99642599e5
--priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk|e0d4f47a15267ad5c280be0a8032aca46d4f48b6
+-app/datastatusnotification/datastatusnotification.apk:system_ext/app/datastatusnotification/datastatusnotification.apk|5158a24e22d93c449591a7b5a1936e7b431c4b50
+-app/embms/embms.apk:system_ext/app/embms/embms.apk|97d4217057636f66c057a539088be806bf76499d
+-app/QtiTelephonyService/QtiTelephonyService.apk:system_ext/app/QtiTelephonyService/QtiTelephonyService.apk|cdb39f2e0ea9a08826f23c9753e04fc5949b14a7
+etc/permissions/embms.xml:system_ext/etc/permissions/embms.xml|5e1b492874c221a7e1188fc3a5369d32b3e67969|1b3c80fab4bf5e91047bbf5b9400018e8f053544
+etc/permissions/lpa.xml:system_ext/etc/permissions/lpa.xml|5aed30f29c7fbe91dcf7eef9dddbdf96ac6bcbee|d63bf20ea4e70847e4259673c82e290651ac5287
+etc/permissions/qcnvitems.xml:system_ext/etc/permissions/qcnvitems.xml|dc0e70cace2317b5169a454cbc2bbf8887c18d55|e8c685ecb3a18c08a5c18bb04a33fb9e5f451cdb
+etc/permissions/qcrilhook.xml:system_ext/etc/permissions/qcrilhook.xml|9fc58a3d54d20ac1d53bab14608815121aefbce5|394fe5f8578e073acef575a84ca9120764b5155e
+etc/permissions/telephonyservice.xml:system_ext/etc/permissions/telephonyservice.xml|b297c8a27443570377d78586b00198839ce326bb|b7831598d3c19c6ce4ef431d1cc44d94c3c35a8d
+framework/embmslibrary.jar:system_ext/framework/embmslibrary.jar|980832af89ed59120b7362ddb56d3120bb6b2239
+framework/qcnvitems.jar:system_ext/framework/qcnvitems.jar|ed2547dfc05e39a354bf2786b01e737778aa187f
+framework/qcrilhook.jar:system_ext/framework/qcrilhook.jar|3be64d500881910c521a8412d42a08fd1f2fabbe
+framework/QtiTelephonyServicelibrary.jar:system_ext/framework/QtiTelephonyServicelibrary.jar|55f8760ec49998b90771f4cde4e781f295d226e1
+framework/uimlpalibrary.jar:system_ext/framework/uimlpalibrary.jar|e1488ee0c37be5cd16b603c65ea4dc99642599e5
+-priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk:system_ext/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk|e0d4f47a15267ad5c280be0a8032aca46d4f48b6
 vendor/bin/adpl|344a88d72bbc44701c5d0d459e0bf41330e381d6
 vendor/bin/ATFWD-daemon|898873ab5a83e3ef576ab081ee3b8a6ea7f79fd4
 vendor/bin/netmgrd|4ce347c8a29430abee6aaeb682a4a247f0fc5925
@@ -841,8 +841,7 @@ vendor/radio/qcril_database/upgrade/2_version_add_wps_config.sql|b4a825ba20fea3e
 vendor/radio/qcril_database/upgrade/3_version_update_wps_config.sql|0571aacaf9fc0868c48bba2f7542f5b4e68c9022
 
 # Radio
-product/etc/permissions/telephony_product_privapp-permissions-qti.xml
-product/framework/qti-telephony-common.jar
+product/framework/qti-telephony-common.jar:system_ext/framework/qti-telephony-common.jar
 vendor/etc/init/dataadpl.rc
 vendor/etc/init/dataqti.rc
 vendor/etc/init/port-bridge.rc
@@ -858,15 +857,15 @@ vendor/bin/hw/vendor.oneplus.hardware.param@1.0-service|675af1749ed7bb28b4b612ae
 vendor/etc/init/vendor.oneplus.hardware.param@1.0-service.rc|f4c0325654ee11dfa0358be6ad6cdaaedd322c47
 
 # Radio - IMS - from OxygenOS
--app/imssettings/imssettings.apk|013eb902c216c659a8cb3f3ba26411829e6a452b
--app/uceShimService/uceShimService.apk|efeb9736a0b13b3fb9a37015264d55eba6d1b110
-lib64/lib-imscamera.so|4f04bbcca17beba473054ea795948d0de14e2de2
-lib64/lib-imsvideocodec.so|4c384f737bba7f378fc2707e54b6ffc271900f1c
-lib64/lib-imsvt.so|b4c64da4750b4b47aed63e02f3df4bb7435873bd
-lib64/lib-imsvtextutils.so|8179841bb6c0b8261dfb5a0237258f734061681f
-lib64/lib-imsvtutils.so|2a4ab08c2de4778bc57e2e28aaf609988177ce9e
-lib64/librcc.so|c2977a8fc64ea69ca4b3afaf184f463744db4c7a
-lib64/vendor.qti.imsrtpservice@1.0.so|5938d942e1e0913019ffc9d5416906439a49f375
+-app/imssettings/imssettings.apk:system_ext/app/uceShimService/uceShimService.apk|013eb902c216c659a8cb3f3ba26411829e6a452b
+-app/uceShimService/uceShimService.apk:system_ext/lib64/com.qualcomm.qti.imscmservice@1.0.so|efeb9736a0b13b3fb9a37015264d55eba6d1b110
+lib64/lib-imscamera.so:system_ext/lib64/lib-imscamera.so|4f04bbcca17beba473054ea795948d0de14e2de2
+lib64/lib-imsvideocodec.so:system_ext/lib64/lib-imsvideocodec.so|4c384f737bba7f378fc2707e54b6ffc271900f1c
+lib64/lib-imsvt.so:system_ext/lib64/lib-imsvt.so|b4c64da4750b4b47aed63e02f3df4bb7435873bd
+lib64/lib-imsvtextutils.so:system_ext/lib64/lib-imsvtextutils.so|8179841bb6c0b8261dfb5a0237258f734061681f
+lib64/lib-imsvtutils.so:system_ext/lib64/lib-imsvtutils.so|2a4ab08c2de4778bc57e2e28aaf609988177ce9e
+lib64/librcc.so:system_ext/lib64/librcc.so|c2977a8fc64ea69ca4b3afaf184f463744db4c7a
+lib64/vendor.qti.imsrtpservice@1.0.so:system_ext/lib64/vendor.qti.imsrtpservice@1.0.so|5938d942e1e0913019ffc9d5416906439a49f375
 vendor/bin/ims_rtp_daemon|c156d0e79677df61357474a2af27446a45b3726b
 vendor/bin/imsdatadaemon|09ca54e8cb2a22abe5a3e28c83d8335d9866f7ac
 vendor/bin/imsqmidaemon|8c041a7ff504f22cac44397957690b01b87bcf0d
@@ -898,9 +897,9 @@ vendor/lib64/vendor.qti.ims.rcsconfig@1.0.so|447d205fca7ea674f7f3f072e7d26ae0a0a
 vendor/lib64/vendor.qti.imsrtpservice@1.0-service-Impl.so|d057e3c70e1a4a767e3477f0b40f5462870e1311
 
 # Radio - IMS
-product/lib64/libimscamera_jni.so
-product/lib64/libimsmedia_jni.so
--product/priv-app/ims/ims.apk
+product/lib64/libimscamera_jni.so:system_ext/lib64/libimscamera_jni.so
+product/lib64/libimsmedia_jni.so:system_ext/lib64/libimsmedia_jni.so
+-product/priv-app/ims/ims.apk:system_ext/priv-app/ims/ims.apk
 
 # Radio - MBN - from OxygenOS
 etc/firmware/mbn_ota/mcfg_sw_NoCDMA/mbn_ota.txt|f1c4d20963277290b0e3d624303e994e72f67156
