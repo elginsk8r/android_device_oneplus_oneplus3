@@ -513,6 +513,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Shims
 PRODUCT_PACKAGES += \
     libcutils_shim \
+    libprotobuf_shim \
     libui_shim
 
 # Telephony

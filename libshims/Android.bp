@@ -27,3 +27,11 @@ cc_library_shared {
     ],
     shared_libs: ["libcutils"],
 }
+
+cc_library_shared {
+    name: "libprotobuf_shim",
+    srcs: [
+        "libprotobuf_shim.cpp",
+    ],
+    shared_libs: ["liblog"],
+}
