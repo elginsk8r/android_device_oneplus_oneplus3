@@ -60,6 +60,9 @@ fi
 
 function blob_fixup() {
     case "${1}" in
+    vendor/bin/imsdatadaemon|vendor/bin/slim_daemon)
+        patchelf --replace-needed "libhwbinder.so" "libhidlbase.so" "${2}"
+    ;;
     vendor/lib64/libwvhidl.so)
         patchelf --replace-needed "libprotobuf-cpp-lite.so" "libprotobuf-cpp-lite-v28.so" "${2}"
     ;;
@@ -70,6 +73,14 @@ function blob_fixup() {
         patchelf --set-soname "vulkan.msm8996.so" "${2}"
     ;;
     esac
+
+    if grep -q "libhwbinder.so" "${2}"; then
+        patchelf --remove-needed "libhwbinder.so" "${2}"
+    fi
+
+    if grep -q "libhidltransport.so" "${2}"; then
+        patchelf --remove-needed "libhidltransport.so" "${2}"
+    fi
 }
 
 # Initialize the helper
