@@ -16,6 +16,7 @@
 cc_binary {
     name: "vendor.evervolv.touch@1.0-service.oneplus3",
     init_rc: ["vendor.evervolv.touch@1.0-service.oneplus3.rc"],
+    vintf_fragments: ["vendor.evervolv.touch@1.0-service.oneplus3.xml"],
     defaults: ["hidl_defaults"],
     relative_install_path: "hw",
     proprietary: true,
