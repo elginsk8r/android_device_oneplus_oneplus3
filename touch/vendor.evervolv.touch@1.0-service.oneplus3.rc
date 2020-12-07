@@ -32,6 +32,9 @@ on boot
     chown system system /proc/touchpanel/letter_o_enable
 
 service touch-hal-1-0 /vendor/bin/hw/vendor.evervolv.touch@1.0-service.oneplus3
+    interface vendor.evervolv.touch@1.0::IGloveMode default
+    interface vendor.evervolv.touch@1.0::IKeyDisabler default
+    interface vendor.evervolv.touch@1.0::ITouchscreenGesture default
     class hal
     user system
     group system
