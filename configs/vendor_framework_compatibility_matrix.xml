@@ -848,14 +848,6 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         </interface>
     </hal>
     <hal format="hidl" optional="true">
-        <name>vendor.evervolv.power</name>
-        <version>1.0</version>
-        <interface>
-            <name>IEvervolvPower</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
         <name>vendor.evervolv.touch</name>
         <version>1.0</version>
         <interface>
