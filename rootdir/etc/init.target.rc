@@ -92,7 +92,7 @@ on boot
 
 #start camera server as daemon
 service qcamerasvr /system/vendor/bin/mm-qcamera-daemon
-    class main
+    class early_hal
     user camera
     group camera system inet input graphics
     writepid /dev/cpuset/camera-daemon/tasks /dev/stune/top-app/tasks
