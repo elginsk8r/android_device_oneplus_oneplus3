@@ -50,7 +50,7 @@ vendor/lib64/com.qualcomm.qti.ant@1.0.so
 vendor/lib64/hw/com.qualcomm.qti.ant@1.0-impl.so
 
 # Audio - from OxygenOS
-etc/firmware/tfa98xx.cnt:vendor/etc/firmware/tfa98xx.cnt|4c6acd032186f062fe6c5af58fb82fca91fccbcd
+etc/firmware/tfa98xx.cnt:vendor/firmware/tfa98xx.cnt|4c6acd032186f062fe6c5af58fb82fca91fccbcd
 vendor/lib/libacdb-fts.so|100e698279595c86656d5c1fa1773863b4cd05f3
 vendor/lib/libacdbloader.so|b28fa1c9f39bc4f4641307c442a20cf53dd2acb8
 vendor/lib/libacdbrtac.so|25ea2d51f215c1e5e06b298d7c93097e93db7a63
