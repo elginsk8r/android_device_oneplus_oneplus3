@@ -142,8 +142,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     audio.bluetooth.default \
     android.hardware.bluetooth.audio@2.0-impl \
-    vendor.qti.hardware.bluetooth_audio@2.0 \
-    vendor.qti.hardware.btconfigstore@1.0
+    vendor.qti.hardware.bluetooth_audio@2.0 
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
@@ -205,15 +204,9 @@ PRODUCT_PACKAGES += \
     libantradio
 
 # Bluetooth
-ifneq ($(QCPATH),)
 PRODUCT_PACKAGES += \
-    android.hardware.bluetooth@1.0-impl-qti:64 \
-    android.hardware.bluetooth@1.0-service-qti \
-    android.hardware.bluetooth@1.0-service-qti.rc
-endif
-
-PRODUCT_PACKAGES += \
-    BluetoothQti
+    libbtconfigstore \
+    vendor.qti.hardware.btconfigstore@1.0
 
 PRODUCT_PROPERTY_OVERRIDES += \
     vendor.qcom.bluetooth.soc=rome \
