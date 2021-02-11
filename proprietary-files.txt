@@ -69,8 +69,6 @@ vendor/etc/acdbdata/MTP/MTP_Headset_cal.acdb|29332163751038698b3de367927f9247b42
 vendor/etc/acdbdata/MTP/MTP_Speaker_cal.acdb|bff85b0dace95a68a38549b0979f7c0fa6fe9467
 
 # Bluetooth
--lib/libbtconfigstore.so
--lib64/libbtconfigstore.so
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
 vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc
 vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so
