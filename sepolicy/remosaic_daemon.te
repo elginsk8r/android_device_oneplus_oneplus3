@@ -8,4 +8,6 @@ init_daemon_domain(remosaic_daemon)
 binder_use(remosaic_daemon)
 
 #Allow remosaic_daemon to be registered with service manager
-allow remosaic_daemon remosaic_service:service_manager add;
+not_full_treble(`
+    allow remosaic_daemon remosaic_service:service_manager add;
+')

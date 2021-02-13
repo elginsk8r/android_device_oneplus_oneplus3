@@ -1,3 +1,5 @@
-allow mm-qcamerad camera_data_file:sock_file { create unlink };
-allow mm-qcamerad camera_data_file:dir rw_dir_perms;
+not_full_treble(`
+    allow mm-qcamerad camera_data_file:sock_file { create unlink };
+    allow mm-qcamerad camera_data_file:dir rw_dir_perms;
+')
 set_prop(mm-qcamerad, vendor_default_prop)
