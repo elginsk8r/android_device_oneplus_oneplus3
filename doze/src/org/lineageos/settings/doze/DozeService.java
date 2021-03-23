@@ -22,12 +22,19 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.SharedPreferences;
+import android.hardware.display.AmbientDisplayConfiguration;
 import android.os.IBinder;
+import android.os.UserHandle;
 import android.util.Log;
+import androidx.preference.PreferenceManager;
 
 public class DozeService extends Service {
     private static final String TAG = "DozeService";
     private static final boolean DEBUG = false;
+
+    private AmbientDisplayConfiguration mConfig;
+    private SharedPreferences mPrefs;
 
     private PickupSensor mPickupSensor;
     private PocketSensor mPocketSensor;
@@ -35,6 +42,10 @@ public class DozeService extends Service {
     @Override
     public void onCreate() {
         if (DEBUG) Log.d(TAG, "Creating service");
+
+        mConfig = new AmbientDisplayConfiguration(this);
+        mPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+
         mPickupSensor = new PickupSensor(this);
         mPocketSensor = new PocketSensor(this);
 
@@ -65,22 +76,23 @@ public class DozeService extends Service {
 
     private void onDisplayOn() {
         if (DEBUG) Log.d(TAG, "Display on");
-        if (Utils.isPickUpEnabled(this)) {
+        if (mConfig.pickupGestureEnabled(UserHandle.USER_CURRENT)) {
             mPickupSensor.disable();
         }
-        if (Utils.isHandwaveGestureEnabled(this) ||
-                Utils.isPocketGestureEnabled(this)) {
+        if (mPrefs.getBoolean(Utils.GESTURE_HAND_WAVE_KEY, false) ||
+                mPrefs.getBoolean(Utils.GESTURE_POCKET_KEY, false)) {
             mPocketSensor.disable();
         }
     }
 
     private void onDisplayOff() {
         if (DEBUG) Log.d(TAG, "Display off");
-        if (Utils.isPickUpEnabled(this)) {
+        if (mConfig.pickupGestureEnabled(UserHandle.USER_CURRENT)) {
             mPickupSensor.enable();
         }
-        if (Utils.isHandwaveGestureEnabled(this) ||
-                Utils.isPocketGestureEnabled(this)) {
+
+        if (mPrefs.getBoolean(Utils.GESTURE_HAND_WAVE_KEY, false) ||
+                mPrefs.getBoolean(Utils.GESTURE_POCKET_KEY, false)) {
             mPocketSensor.enable();
         }
     }

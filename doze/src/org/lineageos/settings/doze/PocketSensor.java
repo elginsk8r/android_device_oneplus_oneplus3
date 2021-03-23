@@ -18,11 +18,13 @@
 package org.lineageos.settings.doze;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.util.Log;
+import androidx.preference.PreferenceManager;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -43,6 +45,7 @@ public class PocketSensor implements SensorEventListener {
     private Sensor mSensor;
     private Context mContext;
     private ExecutorService mExecutorService;
+    private SharedPreferences mPrefs;
 
     private boolean mSawNear = false;
     private long mInPocketTime = 0;
@@ -52,6 +55,7 @@ public class PocketSensor implements SensorEventListener {
         mSensorManager = mContext.getSystemService(SensorManager.class);
         mSensor = Utils.findSensorWithType(mSensorManager, "com.oneplus.sensor.pocket");
         mExecutorService = Executors.newSingleThreadExecutor();
+        mPrefs = PreferenceManager.getDefaultSharedPreferences(context);
     }
 
     private Future<?> submit(Runnable runnable) {
@@ -74,11 +78,12 @@ public class PocketSensor implements SensorEventListener {
     private boolean shouldPulse(long timestamp) {
         long delta = timestamp - mInPocketTime;
 
-        if (Utils.isHandwaveGestureEnabled(mContext) && Utils.isPocketGestureEnabled(mContext)) {
+        if (mPrefs.getBoolean(Utils.GESTURE_HAND_WAVE_KEY, false) &&
+                mPrefs.getBoolean(Utils.GESTURE_POCKET_KEY, false)) {
             return true;
-        } else if (Utils.isHandwaveGestureEnabled(mContext)) {
+        } else if (mPrefs.getBoolean(Utils.GESTURE_HAND_WAVE_KEY, false)) {
             return delta < HANDWAVE_MAX_DELTA_NS;
-        } else if (Utils.isPocketGestureEnabled(mContext)) {
+        } else if (mPrefs.getBoolean(Utils.GESTURE_POCKET_KEY, false)) {
             return delta >= POCKET_MIN_DELTA_NS;
         }
         return false;
